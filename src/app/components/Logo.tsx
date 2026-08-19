@@ -1,4 +1,4 @@
-import logoImg from "figma:asset/be197c6a3ba296048ba52adad99c5b3499e0aa52.png";
+import logoImg from "../../../assets/be197c6a3ba296048ba52adad99c5b3499e0aa52.png";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
