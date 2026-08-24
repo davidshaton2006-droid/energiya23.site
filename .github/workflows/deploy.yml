@@ -33,9 +33,7 @@ jobs:
         run: npm run build
 
       - name: Add CNAME (custom domain)
-        run: echo "your-domain.com" > ./dist/CNAME
-        # Замените your-domain.com на ваш реальный домен.
-        # Если своего домена пока нет, удалите эту строку целиком.
+        run: echo "energiya23.com" > ./dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
