@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, type FormEvent } from "react";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const partnerBenefits = [
@@ -19,31 +19,215 @@ const steps = [
   { num: "4", text: "Получите готовые детали в срок с доставкой на объект" },
 ];
 
-export function ContactSection() {
-  useEffect(() => {
-    // Внедряем скрипты amoCRM только если они еще не добавлены
-    if (!document.getElementById("amoforms_script_1703750")) {
-      const formContainer = document.getElementById("amoCRM-form-container");
-      
-      if (formContainer) {
-        // Скрипт конфигурации
-        const configScript = document.createElement("script");
-        configScript.innerHTML = `!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1703750",hash:"1b9b12cdc655fd30cda4d4e013c87d10",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");`;
-        
-        // Основной скрипт формы
-        const mainScript = document.createElement("script");
-        mainScript.id = "amoforms_script_1703750";
-        mainScript.async = true;
-        mainScript.charset = "utf-8";
-        mainScript.src = "https://forms.amocrm.ru/forms/assets/js/amoforms.js?1777207576";
-        
-        // Вставляем скрипты в наш контейнер
-        formContainer.appendChild(configScript);
-        formContainer.appendChild(mainScript);
-      }
-    }
-  }, []);
+const LEADS_ENDPOINT = "https://energiya23-leads.romantik-baza.workers.dev";
 
+const fieldStyle = {
+  width: "100%",
+  boxSizing: "border-box" as const,
+  padding: "14px 16px",
+  borderRadius: "12px",
+  border: "1.5px solid #E0E0E0",
+  backgroundColor: "#FFFFFF",
+  color: "#222",
+  fontSize: "15px",
+  fontFamily: "Montserrat, sans-serif",
+  outline: "none",
+};
+
+const labelStyle = {
+  display: "block",
+  color: "#555",
+  fontSize: "12px",
+  fontWeight: 700,
+  marginBottom: "6px",
+  textTransform: "uppercase" as const,
+  letterSpacing: "0.06em",
+};
+
+function LeadForm() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [comment, setComment] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot от ботов
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    const next: { name?: string; phone?: string } = {};
+    if (!name.trim()) next.name = "Укажите имя";
+    if (phone.replace(/\D/g, "").length < 10) next.phone = "Введите корректный номер телефона";
+    setErrors(next);
+    if (next.name || next.phone) return;
+
+    setStatus("sending");
+    try {
+      const response = await fetch(LEADS_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, comment, website }),
+      });
+      if (!response.ok) throw new Error("Ошибка отправки");
+      setStatus("success");
+      setName("");
+      setPhone("");
+      setComment("");
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div style={{ textAlign: "center", padding: "24px 8px" }}>
+        <div
+          style={{
+            width: "56px",
+            height: "56px",
+            borderRadius: "50%",
+            backgroundColor: "#6DBE45",
+            color: "#fff",
+            fontSize: "28px",
+            fontWeight: 900,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            margin: "0 auto 16px",
+          }}
+        >
+          ✓
+        </div>
+        <h3 style={{ color: "#222", fontSize: "20px", fontWeight: 900, marginBottom: "8px" }}>
+          Спасибо, заявка отправлена!
+        </h3>
+        <p style={{ color: "#666", fontSize: "14px", lineHeight: 1.6, marginBottom: "20px" }}>
+          Мы свяжемся с вами в течение рабочего дня.
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus("idle")}
+          style={{
+            backgroundColor: "transparent",
+            border: "1.5px solid rgba(232,119,34,0.40)",
+            color: "#E87722",
+            padding: "10px 20px",
+            borderRadius: "10px",
+            fontSize: "13px",
+            fontWeight: 700,
+            cursor: "pointer",
+            fontFamily: "Montserrat, sans-serif",
+          }}
+        >
+          Отправить ещё одну заявку
+        </button>
+      </div>
+    );
+  }
+
+  const sending = status === "sending";
+
+  return (
+    <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+      <h3 style={{ color: "#222", fontSize: "20px", fontWeight: 900, margin: 0 }}>
+        Оставить <span style={{ color: "#E87722" }}>заявку</span>
+      </h3>
+
+      <div>
+        <label htmlFor="lead-name" style={labelStyle}>Имя</label>
+        <input
+          id="lead-name"
+          type="text"
+          autoComplete="name"
+          maxLength={100}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Как к вам обращаться"
+          style={{ ...fieldStyle, borderColor: errors.name ? "#D93025" : "#E0E0E0" }}
+        />
+        {errors.name && <div style={{ color: "#D93025", fontSize: "12px", marginTop: "4px" }}>{errors.name}</div>}
+      </div>
+
+      <div>
+        <label htmlFor="lead-phone" style={labelStyle}>Телефон</label>
+        <input
+          id="lead-phone"
+          type="tel"
+          autoComplete="tel"
+          maxLength={30}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="+7 (___) ___-__-__"
+          style={{ ...fieldStyle, borderColor: errors.phone ? "#D93025" : "#E0E0E0" }}
+        />
+        {errors.phone && <div style={{ color: "#D93025", fontSize: "12px", marginTop: "4px" }}>{errors.phone}</div>}
+      </div>
+
+      <div>
+        <label htmlFor="lead-comment" style={labelStyle}>Комментарий (необязательно)</label>
+        <textarea
+          id="lead-comment"
+          rows={4}
+          maxLength={1000}
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          placeholder="Что нужно изготовить, объёмы, сроки"
+          style={{ ...fieldStyle, resize: "vertical" }}
+        />
+      </div>
+
+      {/* Honeypot: скрыто от людей */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        value={website}
+        onChange={(e) => setWebsite(e.target.value)}
+        style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }}
+      />
+
+      {status === "error" && (
+        <div
+          role="alert"
+          style={{
+            backgroundColor: "rgba(217,48,37,0.08)",
+            border: "1.5px solid rgba(217,48,37,0.30)",
+            color: "#B3261E",
+            padding: "12px 14px",
+            borderRadius: "10px",
+            fontSize: "13px",
+            lineHeight: 1.5,
+          }}
+        >
+          Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам: +7 (960) 493-33-56.
+        </div>
+      )}
+
+      <button
+        type="submit"
+        disabled={sending}
+        style={{
+          backgroundColor: "#E87722",
+          color: "#fff",
+          border: "none",
+          padding: "16px 24px",
+          borderRadius: "12px",
+          fontSize: "15px",
+          fontWeight: 800,
+          fontFamily: "Montserrat, sans-serif",
+          cursor: sending ? "default" : "pointer",
+          opacity: sending ? 0.7 : 1,
+          boxShadow: "0 4px 16px rgba(232,119,34,0.28)",
+        }}
+      >
+        {sending ? "Отправляем…" : "Отправить заявку"}
+      </button>
+    </form>
+  );
+}
+
+export function ContactSection() {
   return (
     <>
       {/* Partnership section */}
@@ -377,25 +561,7 @@ export function ContactSection() {
                 justifyContent: "center",
               }}
             >
-              
-              
-              
-              {/* amoCRM Form Container */}
-              <div 
-                id="amoCRM-form-container"
-                style={{ 
-                  width: "100%", 
-                  minHeight: "400px", 
-                  position: "relative",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                {/* 
-                  ВНИМАНИЕ: Скрипт amoCRM загружается через useEffect в начале компонента.
-                  Этот div служит контейнером, куда amoCRM встроит свою форму.
-                */}
-              </div>
+              <LeadForm />
             </div>
           </div>
 
