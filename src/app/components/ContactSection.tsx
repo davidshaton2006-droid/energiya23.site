@@ -225,6 +225,14 @@ function LeadForm() {
       >
         {sending ? "Отправляем…" : "Отправить заявку"}
       </button>
+
+      <p style={{ color: "#888", fontSize: "12px", lineHeight: 1.5, margin: 0, textAlign: "center" }}>
+        Отправляя форму, вы соглашаетесь с{" "}
+        <a href="/privacy/" target="_blank" rel="noopener" style={{ color: "#E87722" }}>
+          Политикой конфиденциальности
+        </a>
+        .
+      </p>
     </form>
   );
 }
