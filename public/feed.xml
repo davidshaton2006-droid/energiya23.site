@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-10-02 19:00">
+  <shop>
+    <name>ООО ЭНЕРГИЯ</name>
+    <company>ООО ЭНЕРГИЯ</company>
+    <url>https://energiya23.com/</url>
+    <currencies>
+      <currency id="RUR" rate="1"/>
+    </currencies>
+    <categories>
+      <category id="1">Изготовление металлоконструкций</category>
+      <category id="2">Обработка металла</category>
+      <category id="3">Проектирование</category>
+      <category id="4">Доставка</category>
+    </categories>
+    <offers>
+      <offer id="metalloconstruction-warehouse" available="true">
+        <name>Изготовление деталей металлоконструкций для складов и ангаров (простые конструкции)</name>
+        <url>https://energiya23.com/#products</url>
+        <price from="true">20</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://energiya23.com/og-image.jpg</picture>
+        <description>Изготовление деталей металлоконструкций для складов и ангаров по проектной документации КМ и КМД. Цена указана за работу, без стоимости материала, за 1 кг. Гарантия 3 года, сроки от 10 дней.</description>
+        <param name="Единица измерения">кг</param>
+      </offer>
+      <offer id="metalloconstruction-industrial" available="true">
+        <name>Изготовление деталей металлоконструкций для промышленных зданий (сложные узлы)</name>
+        <url>https://energiya23.com/#products</url>
+        <price from="true">36</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://energiya23.com/og-image.jpg</picture>
+        <description>Изготовление деталей металлоконструкций для промышленных зданий, сложные узлы. Цена указана за работу, без стоимости материала, за 1 кг. Гарантия 3 года, сроки от 10 дней.</description>
+        <param name="Единица измерения">кг</param>
+      </offer>
+      <offer id="metalloconstruction-custom" available="true">
+        <name>Металлоконструкции по индивидуальным чертежам заказчика</name>
+        <url>https://energiya23.com/#products</url>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://energiya23.com/og-image.jpg</picture>
+        <description>Изготовление металлоконструкций по индивидуальным чертежам заказчика, по проектной документации КМ и КМД. Стоимость — по запросу.</description>
+      </offer>
+      <offer id="laser-cutting" available="true">
+        <name>Лазерная резка металла</name>
+        <url>https://energiya23.com/#services</url>
+        <price from="true">15</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://energiya23.com/og-image.jpg</picture>
+        <description>Высокоточная лазерная резка металла по чертежам, чистый рез с минимальными допусками. Цена за 1 кг.</description>
+        <param name="Единица измерения">кг</param>
+      </offer>
+      <offer id="plasma-cutting" available="true">
+        <name>Плазменная резка металла</name>
+        <url>https://energiya23.com/#services</url>
+        <price from="true">15</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://energiya23.com/og-image.jpg</picture>
+        <description>Плазменная резка листового металла толщиной до 40 мм. Подходит для серийных заказов. Цена за 1 кг.</description>
+        <param name="Единица измерения">кг</param>
+      </offer>
+      <offer id="band-saw-cutting" available="true">
+        <name>Ленточнопильный раскрой металла</name>
+        <url>https://energiya23.com/#services</url>
+        <price from="true">12</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://energiya23.com/og-image.jpg</picture>
+        <description>Ленточнопильный раскрой длинномерного и профильного металлопроката, ширина реза до 420 мм. Цена за 1 кг.</description>
+        <param name="Единица измерения">кг</param>
+      </offer>
+      <offer id="design-km-kmd" available="true">
+        <name>Проектирование КМ и КМД</name>
+        <url>https://energiya23.com/#services</url>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://energiya23.com/og-image.jpg</picture>
+        <description>Разработка проектной документации КМ и КМД: схемы расположения конструкций, деталировочные чертежи, спецификации металлопроката. Стоимость — по запросу.</description>
+      </offer>
+      <offer id="delivery" available="true">
+        <name>Доставка металлоконструкций собственным транспортом</name>
+        <url>https://energiya23.com/#services</url>
+        <currencyId>RUR</currencyId>
+        <categoryId>4</categoryId>
+        <picture>https://energiya23.com/og-image.jpg</picture>
+        <description>Доставка металлоконструкций собственным транспортом по всей территории России с контролем погрузки и сохранности груза. Стоимость — по запросу.</description>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
