@@ -526,7 +526,7 @@ export function ContactSection() {
                 </div>
                 <div style={{ color: "#555", fontSize: "13px", lineHeight: 1.8 }}>
                   <div style={{ fontWeight: 700, color: "#222" }}>ООО ЭНЕРГИЯ</div>
-                  <div>ИНН/КПП: [укажите] | ОГРН: [укажите]</div>
+                  <div>ИНН: 2348036088 | ОГРН: 1142348000332</div>
                 </div>
                 <button
                   style={{
