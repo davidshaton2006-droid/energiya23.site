@@ -69,6 +69,8 @@ function LeadForm() {
       });
       if (!response.ok) throw new Error("Ошибка отправки");
       setStatus("success");
+      // Цель Яндекс Метрики: заявка отправлена
+      (window as any).ym?.(113330393, "reachGoal", "lead");
       setName("");
       setPhone("");
       setComment("");
