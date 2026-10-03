@@ -39,7 +39,16 @@ const groups = [
   },
 ];
 
-export function ForWhoSection() {
+const FORWHO_ICONS: Record<string, typeof Building2> = { building: Building2, trend: TrendingUp, factory: Factory };
+
+export function ForWhoSection({ c = {} }: { c?: any }) {
+  const G = c.groups
+    ? c.groups.map((g: any, i: number) => ({
+        color: i % 2 ? "#6DBE45" : "#E87722",
+        ...g,
+        icon: FORWHO_ICONS[g.icon] || [Building2, TrendingUp, Factory][i % 3],
+      }))
+    : groups;
   return (
     <section
       id="for-who"
@@ -66,7 +75,7 @@ export function ForWhoSection() {
               marginBottom: "16px",
             }}
           >
-            Наши клиенты
+            {c.badge ?? "Наши клиенты"}
           </span>
           <h2
             style={{
@@ -76,10 +85,10 @@ export function ForWhoSection() {
               lineHeight: 1.2,
             }}
           >
-            Для кого мы <span style={{ color: "#6DBE45" }}>работаем</span>
+            {c.titleBefore ?? "Для кого мы"} <span style={{ color: "#6DBE45" }}>{c.titleAccent ?? "работаем"}</span>
           </h2>
           <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "560px", margin: "12px auto 0" }}>
-            Комплексные решения для B2B-заказчиков в строительстве и промышленности
+            {c.subtitle ?? "Комплексные решения для B2B-заказчиков в строительстве и промышленности"}
           </p>
         </div>
 
@@ -91,7 +100,7 @@ export function ForWhoSection() {
             gap: "24px",
           }}
         >
-          {groups.map((group, idx) => {
+          {G.map((group: any, idx: number) => {
             const Icon = group.icon;
             return (
               <div

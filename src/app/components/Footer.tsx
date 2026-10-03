@@ -15,6 +15,7 @@ export function Footer() {
   const handleNav = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+    else window.location.href = "/" + href;
   };
 
   return (

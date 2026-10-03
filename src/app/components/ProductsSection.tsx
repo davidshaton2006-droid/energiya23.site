@@ -55,7 +55,7 @@ const whatWeProduce = [
   "Серийные и единичные заказы любой сложности",
 ];
 
-export function ProductsSection() {
+export function ProductsSection({ c = {} }: { c?: any }) {
   const scrollToContact = () => {
     const el = document.querySelector("#contacts");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -87,15 +87,14 @@ export function ProductsSection() {
               marginBottom: "16px",
             }}
           >
-            Продукция
+            {c.badge ?? "Продукция"}
           </span>
           <h2 style={{ color: "#222", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 900, lineHeight: 1.2 }}>
-            Детали металлоконструкций для{" "}
-            <span style={{ color: "#6DBE45" }}>складов, ангаров</span> и промышленных зданий
+            {c.h2?.[0] ?? "Детали металлоконструкций для"}{" "}
+            <span style={{ color: "#6DBE45" }}>{c.h2?.[1] ?? "складов, ангаров"}</span> {c.h2?.[2] ?? "и промышленных зданий"}
           </h2>
           <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
-            ООО ЭНЕРГИЯ производит полный комплект деталей металлоконструкций
-            промышленного качества, готовых к монтажу без доработок
+            {c.subtitle ?? "ООО ЭНЕРГИЯ производит полный комплект деталей металлоконструкций промышленного качества, готовых к монтажу без доработок"}
           </p>
         </div>
 
@@ -111,7 +110,7 @@ export function ProductsSection() {
           }}
         >
           <h3 style={{ color: "#6DBE45", fontSize: "20px", fontWeight: 800, marginBottom: "20px" }}>
-            Мы производим:
+            {c.bannerTitle ?? "Мы производим:"}
           </h3>
           <div
             style={{
@@ -120,7 +119,7 @@ export function ProductsSection() {
               gap: "12px",
             }}
           >
-            {whatWeProduce.map((item, i) => (
+            {(c.banner ?? whatWeProduce).map((item, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <ChevronRight size={16} color="#E87722" style={{ flexShrink: 0 }} />
                 <span style={{ color: "#333", fontSize: "18px", fontWeight: 500 }}>{item}</span>
@@ -153,7 +152,7 @@ export function ProductsSection() {
             marginBottom: "40px",
           }}
         >
-          {productCategories.map((cat, idx) => (
+          {(c.categories ?? productCategories).map((cat, idx) => (
             <div
               key={idx}
               style={{

@@ -8,7 +8,19 @@ const pains = [
   { pain: "Что делать, если найдутся недочёты", fix: "Гарантия 3 года на продукцию, контроль качества на каждом этапе." },
 ];
 
-export function OfferSection() {
+const OFFER_DEFAULT = {
+  eyebrow: "Без рисков для вашего объекта",
+  h2: ["Боитесь сорванных сроков и", "доплат при монтаже?"],
+  sub: "Закрепим цену и сроки в договоре и сделаем детали строго по вашим чертежам. Они приедут на объект маркированными и готовыми к монтажу без доработок.",
+  pains,
+  formTitle: "Получите расчёт стоимости и сроков по вашим чертежам",
+  formSub: "Оставьте имя и телефон. Менеджер свяжется с вами в течение рабочего дня и уточнит детали.",
+  button: "Получить расчёт",
+  source: "offer",
+};
+
+export function OfferSection({ c = {} }: { c?: Partial<typeof OFFER_DEFAULT> }) {
+  const O = { ...OFFER_DEFAULT, ...c };
   return (
     <section
       id="offer"
@@ -55,7 +67,7 @@ export function OfferSection() {
                 marginBottom: "16px",
               }}
             >
-              Без рисков для вашего объекта
+              {O.eyebrow}
             </span>
             <h2
               style={{
@@ -66,17 +78,16 @@ export function OfferSection() {
                 margin: 0,
               }}
             >
-              Боитесь сорванных сроков и <span style={{ color: "#E87722" }}>доплат при монтаже?</span>
+              {O.h2[0]} <span style={{ color: "#E87722" }}>{O.h2[1]}</span>
             </h2>
             <p style={{ color: "rgba(255,255,255,0.78)", fontSize: "clamp(17px, 1.4vw, 20px)", lineHeight: 1.65, margin: "16px 0 0", maxWidth: "620px" }}>
-              Закрепим цену и сроки в договоре и сделаем детали строго по вашим чертежам. Они приедут на объект
-              маркированными и готовыми к монтажу без доработок.
+              {O.sub}
             </p>
 
           </div>
 
           <div className="o-pains">
-              {pains.map((p) => (
+              {O.pains.map((p) => (
                 <div
                   key={p.pain}
                   style={{
@@ -107,12 +118,12 @@ export function OfferSection() {
             }}
           >
             <h3 style={{ color: "#222", fontSize: "clamp(20px, 2.2vw, 24px)", fontWeight: 900, lineHeight: 1.25, margin: "0 0 6px" }}>
-              Получите расчёт стоимости и сроков по вашим чертежам
+              {O.formTitle}
             </h3>
             <p style={{ color: "#666", fontSize: "18px", lineHeight: 1.55, margin: "0 0 18px" }}>
-              Оставьте имя и телефон. Менеджер свяжется с вами в течение рабочего дня и уточнит детали.
+              {O.formSub}
             </p>
-            <LeadFormCompact source="offer" buttonText="Получить расчёт" />
+            <LeadFormCompact source={O.source} buttonText={O.button} />
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ const labelStyle = {
   letterSpacing: "0.06em",
 };
 
-function LeadForm() {
+function LeadForm({ source }: { source: string }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
@@ -65,7 +65,7 @@ function LeadForm() {
       const response = await fetch(LEADS_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, comment, website, source: "contacts" }),
+        body: JSON.stringify({ name, phone, comment, website, source }),
       });
       if (!response.ok) throw new Error("Ошибка отправки");
       setStatus("success");
@@ -237,10 +237,10 @@ function LeadForm() {
   );
 }
 
-export function ContactSection() {
+export function ContactSection({ source = "contacts", showPartnership = true, c = {} }: { source?: string; showPartnership?: boolean; c?: any }) {
   return (
     <>
-      {/* Partnership section */}
+      {showPartnership && (
       <section
         id="partnership"
         style={{
@@ -385,6 +385,7 @@ export function ContactSection() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Contacts section */}
       <section
@@ -571,7 +572,7 @@ export function ContactSection() {
                 justifyContent: "center",
               }}
             >
-              <LeadForm />
+              <LeadForm source={source} />
             </div>
           </div>
 

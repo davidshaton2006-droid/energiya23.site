@@ -43,7 +43,7 @@ const reviews = [
   },
 ];
 
-export function GalleryReviews() {
+export function GalleryReviews({ c = {}, showReviews = true }: { c?: any; showReviews?: boolean }) {
   return (
     <>
       {/* Gallery */}
@@ -71,10 +71,10 @@ export function GalleryReviews() {
                 marginBottom: "16px",
               }}
             >
-              Галерея
+              {c.badge ?? "Галерея"}
             </span>
             <h2 style={{ color: "#222", fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 900 }}>
-              Примеры нашей <span style={{ color: "#6DBE45" }}>продукции</span>
+              {c.titleBefore ?? "Примеры нашей"} <span style={{ color: "#6DBE45" }}>{c.titleAccent ?? "продукции"}</span>
             </h2>
           </div>
 
@@ -85,7 +85,7 @@ export function GalleryReviews() {
               gap: "20px",
             }}
           >
-            {galleryImages.map((img, idx) => (
+            {(c.images ?? galleryImages).map((img, idx) => (
               <div
                 key={idx}
                 style={{
@@ -135,7 +135,7 @@ export function GalleryReviews() {
         </div>
       </section>
 
-      {/* Reviews */}
+      {showReviews && (
       <section
         id="reviews"
         style={{
@@ -222,6 +222,7 @@ export function GalleryReviews() {
           </div>
         </div>
       </section>
+      )}
     </>
   );
 }

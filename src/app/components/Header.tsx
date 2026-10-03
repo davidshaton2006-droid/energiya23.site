@@ -13,7 +13,7 @@ const navItems = [
   { label: "Контакты", href: "#contacts" },
 ];
 
-export function Header() {
+export function Header({ items = navItems }: { items?: { label: string; href: string }[] } = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -25,8 +25,13 @@ export function Header() {
 
   const handleNav = (href: string) => {
     setMobileOpen(false);
+    if (href.startsWith("/")) {
+      window.location.href = href;
+      return;
+    }
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+    else window.location.href = "/" + href;
   };
 
   return (
@@ -66,7 +71,7 @@ export function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
+            {items.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleNav(item.href)}
@@ -157,7 +162,7 @@ export function Header() {
       {mobileOpen && (
         <div style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid #EBEBEB", boxShadow: "0 8px 24px rgba(0,0,0,0.08)" }}>
           <div className="px-4 py-4 flex flex-col gap-1">
-            {navItems.map((item) => (
+            {items.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleNav(item.href)}

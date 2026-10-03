@@ -49,7 +49,8 @@ const priceRows = [
   },
 ];
 
-export function PriceSection() {
+export function PriceSection({ c = {} }: { c?: any }) {
+  const rows = c.rows ?? priceRows;
   const scrollToContact = () => {
     const el = document.querySelector("#contacts");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -81,15 +82,14 @@ export function PriceSection() {
               marginBottom: "16px",
             }}
           >
-            Прайс-лист
+            {c.badge ?? "Прайс-лист"}
           </span>
           <h2 style={{ color: "#222", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 900, lineHeight: 1.2 }}>
-            Цены на производство{" "}
-            <span style={{ color: "#E87722" }}>деталей металлоконструкций</span>
+            {c.h2?.[0] ?? "Цены на производство"}{" "}
+            <span style={{ color: "#E87722" }}>{c.h2?.[1] ?? "деталей металлоконструкций"}</span>
           </h2>
           <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
-            Стоимость производства формируется индивидуально. Для точного расчёта отправьте
-            проектную документацию или спецификацию.
+            {c.subtitle ?? "Стоимость производства формируется индивидуально. Для точного расчёта отправьте проектную документацию или спецификацию."}
           </p>
         </div>
 
@@ -137,7 +137,7 @@ export function PriceSection() {
           </div>
 
           {/* Rows */}
-          {priceRows.map((row, idx) => (
+          {rows.map((row, idx) => (
             <div
               key={idx}
               className="price-table-row"
@@ -146,7 +146,7 @@ export function PriceSection() {
                 gridTemplateColumns: "1fr 1fr auto",
                 padding: "18px 28px",
                 gap: "16px",
-                borderBottom: idx < priceRows.length - 1 ? "1px solid #F0F0F0" : "none",
+                borderBottom: idx < rows.length - 1 ? "1px solid #F0F0F0" : "none",
                 backgroundColor: idx % 2 === 0 ? "#FFFFFF" : "#FAFAFA",
                 transition: "background 0.15s",
                 cursor: "default",

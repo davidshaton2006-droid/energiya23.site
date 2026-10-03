@@ -1,7 +1,32 @@
 import { Phone, ChevronDown } from "lucide-react";
 import { LeadFormCompact } from "./LeadForm";
 
-export function HeroSection() {
+const HERO_DEFAULT = {
+  badge: "Производство с 2014 года · Краснодар",
+  h1: ["Производство деталей", "металлоконструкций", "в Краснодаре"],
+  sub: "Производим детали металлоконструкций промышленного качества для строительства складов, ангаров и промышленных зданий. Государственные и коммерческие B2B-заказы. Точное изготовление по проектной документации, стабильные сроки, доставка по всей России.",
+  term: "Сроки от 10 дней",
+  chips: ["🛡️ Гарантия 3 года", "📄 Фиксированная цена", "🚛 Доставка по России"],
+  formTitle: "Рассчитаем стоимость по вашим чертежам",
+  formSub: "Оставьте имя и телефон, менеджер свяжется с вами в течение рабочего дня.",
+  stats: [
+    { value: "2014", label: "год основания" },
+    { value: "10+", label: "лет опыта" },
+    { value: "90%", label: "клиентов возвращаются" },
+    { value: "1 млн+", label: "км доставок" },
+  ],
+  photo: {
+    src: "/img/hero-1280.webp",
+    srcSet: "/img/hero-640.webp 640w, /img/hero-1280.webp 1280w",
+    w: 1280,
+    h: 535,
+    alt: "Производство металлоконструкций",
+  },
+  source: "hero",
+};
+
+export function HeroSection({ c = {} }: { c?: Partial<typeof HERO_DEFAULT> }) {
+  const H = { ...HERO_DEFAULT, ...c };
   const scrollToContact = () => {
     const el = document.querySelector("#contacts");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -46,14 +71,14 @@ export function HeroSection() {
           }}
         >
           <img
-            src="/img/hero-1280.webp"
-            srcSet="/img/hero-640.webp 640w, /img/hero-1280.webp 1280w"
+            src={H.photo.src}
+            srcSet={H.photo.srcSet}
             sizes="(max-width: 700px) 100vw, 1232px"
-            width={1280}
-            height={535}
+            width={H.photo.w}
+            height={H.photo.h}
             decoding="async"
             fetchpriority="high"
-            alt="Производство металлоконструкций"
+            alt={H.photo.alt}
             style={{
               width: "100%",
               height: "100%",
@@ -127,7 +152,7 @@ export function HeroSection() {
           >
             <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#E87722", display: "inline-block" }} />
             <span style={{ color: "#E87722", fontSize: "14px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em" }}>
-              Производство с 2014 года · Краснодар
+              {H.badge}
             </span>
           </div>
 
@@ -141,9 +166,9 @@ export function HeroSection() {
               margin: 0,
             }}
           >
-            Производство деталей<br />
-            <span style={{ color: "#6DBE45" }}>металлоконструкций</span>{" "}
-            в Краснодаре
+            {H.h1[0]}<br />
+            <span style={{ color: "#6DBE45" }}>{H.h1[1]}</span>{" "}
+            {H.h1[2]}
           </h1>
 
           {/* Sub */}
@@ -156,9 +181,7 @@ export function HeroSection() {
               maxWidth: "560px",
             }}
           >
-            Производим детали металлоконструкций промышленного качества для строительства складов,
-            ангаров и промышленных зданий. Государственные и коммерческие B2B-заказы.
-            Точное изготовление по проектной документации, стабильные сроки, доставка по всей России.
+            {H.sub}
           </p>
 
           {/* Lead form */}
@@ -175,12 +198,12 @@ export function HeroSection() {
             }}
           >
             <div style={{ color: "#222", fontSize: "19px", fontWeight: 900, lineHeight: 1.3, marginBottom: "4px" }}>
-              Рассчитаем стоимость по вашим чертежам
+              {H.formTitle}
             </div>
             <div style={{ color: "#4A4A4A", fontSize: "17px", lineHeight: 1.5, marginBottom: "14px" }}>
-              Оставьте имя и телефон, менеджер свяжется с вами в течение рабочего дня.
+              {H.formSub}
             </div>
-            <LeadFormCompact source="hero" buttonText="Рассчитать" pulse />
+            <LeadFormCompact source={H.source} buttonText="Рассчитать" pulse />
           </div>
 
           {/* Tags row */}
@@ -201,7 +224,7 @@ export function HeroSection() {
               </span>
               <span className="tag-sep" style={{ width: "1px", height: "16px", backgroundColor: "rgba(255,255,255,0.4)" }} />
               <span style={{ color: "#fff", fontSize: "16px", fontWeight: 600 }}>
-                Сроки от 10 дней
+                {H.term}
               </span>
             </div>
             <div
@@ -215,11 +238,11 @@ export function HeroSection() {
                 flexWrap: "wrap",
               }}
             >
-              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>🛡️ Гарантия 3 года</span>
+              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>{H.chips[0]}</span>
               <span className="tag-sep" style={{ width: "1px", height: "16px", backgroundColor: "rgba(255,255,255,0.4)" }} />
-              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>📄 Фиксированная цена</span>
+              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>{H.chips[1]}</span>
               <span className="tag-sep" style={{ width: "1px", height: "16px", backgroundColor: "rgba(255,255,255,0.4)" }} />
-              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>🚛 Доставка по России</span>
+              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>{H.chips[2]}</span>
             </div>
           </div>
 
@@ -299,12 +322,7 @@ export function HeroSection() {
               borderTop: "1px solid #E0E0E0",
             }}
           >
-            {[
-              { value: "2014", label: "год основания" },
-              { value: "10+", label: "лет опыта" },
-              { value: "90%", label: "клиентов возвращаются" },
-              { value: "1 млн+", label: "км доставок" },
-            ].map((stat) => (
+            {H.stats.map((stat) => (
               <div key={stat.value} style={{ textAlign: "center", flex: "1 1 auto", minWidth: "60px" }}>
                 <div style={{ color: "#E87722", fontSize: "clamp(18px, 2vw, 28px)", fontWeight: 900, lineHeight: 1 }}>
                   {stat.value}

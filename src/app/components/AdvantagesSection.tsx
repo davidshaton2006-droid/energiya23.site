@@ -25,7 +25,8 @@ const advantages = [
   },
 ];
 
-export function AdvantagesSection() {
+export function AdvantagesSection({ c = {} }: { c?: any }) {
+  const A = c.items ? c.items.map((x: any, i: number) => ({ num: String(i + 1).padStart(2, "0"), ...x })) : advantages;
   return (
     <section
       id="advantages"
@@ -52,7 +53,7 @@ export function AdvantagesSection() {
               marginBottom: "16px",
             }}
           >
-            Почему выбирают нас
+            {c.badge ?? "Почему выбирают нас"}
           </span>
           <h2
             style={{
@@ -62,7 +63,7 @@ export function AdvantagesSection() {
               lineHeight: 1.2,
             }}
           >
-            Наши <span style={{ color: "#E87722" }}>преимущества</span>
+            {c.titleBefore ?? "Наши"} <span style={{ color: "#E87722" }}>{c.titleAccent ?? "преимущества"}</span>
           </h2>
         </div>
 
@@ -74,7 +75,7 @@ export function AdvantagesSection() {
             gap: "24px",
           }}
         >
-          {advantages.map((adv) => (
+          {A.map((adv: any) => (
             <div
               key={adv.num}
               style={{
