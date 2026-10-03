@@ -139,16 +139,18 @@ export function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
               {[
-                "Изготовление металлоконструкций",
-                "Лазерная резка металла",
-                "Плазменная резка металла",
-                "Ленточнопильный раскрой",
-                "Высокоточное сверление",
-                "Проектирование КМ и КМД",
-                "Доставка по России",
-              ].map((s) => (
-                <li key={s}>
-                  <span style={{ color: "#999", fontSize: "13px" }}>{s}</span>
+                ["Металлоконструкции для складов", "/metallokonstrukcii-dlya-skladov/"],
+                ["Металлоконструкции для ангаров", "/metallokonstrukcii-dlya-angarov/"],
+                ["Металлоконструкции для промзданий", "/metallokonstrukcii-dlya-promyshlennyh-zdanij/"],
+                ["Лазерная резка металла", "/lazernaya-rezka-metalla/"],
+                ["Плазменная резка металла", "/plazmennaya-rezka-metalla/"],
+                ["Ленточнопильный раскрой", "/lentochnopilnyj-raskroj-metalla/"],
+                ["Проектирование КМ и КМД", "/proektirovanie-km-kmd/"],
+                ["Огнезащита и АКЗ", "/ognezashchita-metallokonstrukcij/"],
+                ["Доставка по России", "/dostavka-metallokonstrukcij/"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <a href={href} style={{ color: "#999", fontSize: "13px", textDecoration: "none" }}>{label}</a>
                 </li>
               ))}
             </ul>

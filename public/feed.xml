@@ -16,7 +16,7 @@
     <offers>
       <offer id="metalloconstruction-warehouse" available="true">
         <name>Изготовление деталей металлоконструкций для складов и ангаров (простые конструкции)</name>
-        <url>https://energiya23.com/#products</url>
+        <url>https://energiya23.com/metallokonstrukcii-dlya-skladov/</url>
         <price from="true">20</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
@@ -26,7 +26,7 @@
       </offer>
       <offer id="metalloconstruction-industrial" available="true">
         <name>Изготовление деталей металлоконструкций для промышленных зданий (сложные узлы)</name>
-        <url>https://energiya23.com/#products</url>
+        <url>https://energiya23.com/metallokonstrukcii-dlya-promyshlennyh-zdanij/</url>
         <price from="true">36</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
@@ -36,7 +36,7 @@
       </offer>
       <offer id="metalloconstruction-custom" available="true">
         <name>Металлоконструкции по индивидуальным чертежам заказчика</name>
-        <url>https://energiya23.com/#products</url>
+        <url>https://energiya23.com/metallokonstrukcii-dlya-promyshlennyh-zdanij/</url>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energiya23.com/og-image.jpg</picture>
@@ -44,7 +44,7 @@
       </offer>
       <offer id="laser-cutting" available="true">
         <name>Лазерная резка металла</name>
-        <url>https://energiya23.com/#services</url>
+        <url>https://energiya23.com/lazernaya-rezka-metalla/</url>
         <price from="true">15</price>
         <currencyId>RUR</currencyId>
         <categoryId>2</categoryId>
@@ -54,7 +54,7 @@
       </offer>
       <offer id="plasma-cutting" available="true">
         <name>Плазменная резка металла</name>
-        <url>https://energiya23.com/#services</url>
+        <url>https://energiya23.com/plazmennaya-rezka-metalla/</url>
         <price from="true">15</price>
         <currencyId>RUR</currencyId>
         <categoryId>2</categoryId>
@@ -64,7 +64,7 @@
       </offer>
       <offer id="band-saw-cutting" available="true">
         <name>Ленточнопильный раскрой металла</name>
-        <url>https://energiya23.com/#services</url>
+        <url>https://energiya23.com/lentochnopilnyj-raskroj-metalla/</url>
         <price from="true">12</price>
         <currencyId>RUR</currencyId>
         <categoryId>2</categoryId>
@@ -74,7 +74,7 @@
       </offer>
       <offer id="design-km-kmd" available="true">
         <name>Проектирование КМ и КМД</name>
-        <url>https://energiya23.com/#services</url>
+        <url>https://energiya23.com/proektirovanie-km-kmd/</url>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
         <picture>https://energiya23.com/og-image.jpg</picture>
@@ -82,7 +82,7 @@
       </offer>
       <offer id="delivery" available="true">
         <name>Доставка металлоконструкций собственным транспортом</name>
-        <url>https://energiya23.com/#services</url>
+        <url>https://energiya23.com/dostavka-metallokonstrukcij/</url>
         <currencyId>RUR</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energiya23.com/og-image.jpg</picture>
