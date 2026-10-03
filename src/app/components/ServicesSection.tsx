@@ -93,7 +93,7 @@ export function ServicesSection() {
               display: "inline-block",
               backgroundColor: "#E87722",
               color: "#fff",
-              fontSize: "12px",
+              fontSize: "14px",
               fontWeight: 800,
               textTransform: "uppercase",
               letterSpacing: "0.12em",
@@ -108,7 +108,7 @@ export function ServicesSection() {
             Полный цикл производства{" "}
             <span style={{ color: "#E87722" }}>деталей металлоконструкций</span>
           </h2>
-          <p style={{ color: "#666", fontSize: "16px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
+          <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
             Контроль качества ведётся на всех этапах — от разработки проекта до доставки на объект
           </p>
         </div>
@@ -166,10 +166,10 @@ export function ServicesSection() {
                   <Icon size={24} color={service.color} />
                 </div>
 
-                <h3 style={{ color: "#222", fontSize: "16px", fontWeight: 800, marginBottom: "10px", lineHeight: 1.3 }}>
+                <h3 style={{ color: "#222", fontSize: "18px", fontWeight: 800, marginBottom: "10px", lineHeight: 1.3 }}>
                   {service.title}
                 </h3>
-                <p style={{ color: "#666", fontSize: "13px", lineHeight: 1.6, marginBottom: "16px" }}>
+                <p style={{ color: "#4A4A4A", fontSize: "17px", lineHeight: 1.6, marginBottom: "16px" }}>
                   {service.desc}
                 </p>
 
@@ -183,7 +183,7 @@ export function ServicesSection() {
                       <span
                         style={{
                           color: service.color,
-                          fontSize: "12px",
+                          fontSize: "16px",
                           fontWeight: 900,
                           flexShrink: 0,
                           marginTop: "1px",
@@ -191,7 +191,7 @@ export function ServicesSection() {
                       >
                         ✓
                       </span>
-                      <span style={{ color: "#555", fontSize: "13px", lineHeight: 1.5 }}>{feat}</span>
+                      <span style={{ color: "#3F3F3F", fontSize: "17px", lineHeight: 1.5 }}>{feat}</span>
                     </li>
                   ))}
                 </ul>
@@ -214,7 +214,7 @@ export function ServicesSection() {
             <h3 style={{ fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 900, color: "#222", marginBottom: "12px", lineHeight: 1.2 }}>
               Комплексная защита и <span style={{ color: "#E87722" }}>спецобработка</span> конструкций
             </h3>
-            <p style={{ fontSize: "16px", color: "#555", lineHeight: 1.6, margin: 0, maxWidth: "800px" }}>
+            <p style={{ fontSize: "18px", color: "#3F3F3F", lineHeight: 1.6, margin: 0, maxWidth: "800px" }}>
               Обеспечиваем долговечность и безопасность ваших объектов: от разработки проекта до официальной сдачи контролирующим органам.
             </p>
           </div>
@@ -245,8 +245,8 @@ export function ServicesSection() {
               />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%)" }} />
               <div style={{ position: "absolute", bottom: "20px", left: "20px", right: "20px" }}>
-                <div style={{ color: "#fff", fontSize: "18px", fontWeight: 800 }}>Сдача работ в МЧС «под ключ»</div>
-                <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "13px" }}>и подготовка исполнительной документации</div>
+                <div style={{ color: "#fff", fontSize: "20px", fontWeight: 800 }}>Сдача работ в МЧС «под ключ»</div>
+                <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "17px" }}>и подготовка исполнительной документации</div>
               </div>
             </div>
 
@@ -254,7 +254,7 @@ export function ServicesSection() {
             <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
               {/* Targets */}
               <div>
-                <h4 style={{ fontSize: "18px", fontWeight: 800, color: "#222", marginBottom: "16px" }}>Что мы обрабатываем:</h4>
+                <h4 style={{ fontSize: "20px", fontWeight: 800, color: "#222", marginBottom: "16px" }}>Что мы обрабатываем:</h4>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "16px" }}>
                   {protectionTargets.map((target, idx) => {
                     const TIcon = target.icon;
@@ -264,8 +264,8 @@ export function ServicesSection() {
                           <TIcon size={16} color="#6DBE45" />
                         </div>
                         <div>
-                          <div style={{ fontSize: "14px", fontWeight: 700, color: "#333", marginBottom: "4px", lineHeight: 1.2 }}>{target.title}</div>
-                          <div style={{ fontSize: "12px", color: "#666", lineHeight: 1.4 }}>{target.desc}</div>
+                          <div style={{ fontSize: "18px", fontWeight: 700, color: "#333", marginBottom: "4px", lineHeight: 1.2 }}>{target.title}</div>
+                          <div style={{ fontSize: "16px", color: "#4A4A4A", lineHeight: 1.4 }}>{target.desc}</div>
                         </div>
                       </div>
                     )
@@ -275,17 +275,17 @@ export function ServicesSection() {
 
               {/* Reasons */}
               <div>
-                <h4 style={{ fontSize: "18px", fontWeight: 800, color: "#222", marginBottom: "16px" }}>Почему выбирают нас:</h4>
+                <h4 style={{ fontSize: "20px", fontWeight: 800, color: "#222", marginBottom: "16px" }}>Почему выбирают нас:</h4>
                 <div style={{ display: "flex", gap: "12px", marginBottom: "16px", flexWrap: "wrap" }}>
-                   <div style={{ padding: "6px 12px", borderRadius: "6px", backgroundColor: "rgba(232,119,34,0.1)", color: "#E87722", fontSize: "12px", fontWeight: 700, display: "flex", alignItems: "center", gap: "6px" }}><Award size={14} /> Экспертность</div>
-                   <div style={{ padding: "6px 12px", borderRadius: "6px", backgroundColor: "rgba(232,119,34,0.1)", color: "#E87722", fontSize: "12px", fontWeight: 700, display: "flex", alignItems: "center", gap: "6px" }}><Scale size={14} /> Сервис и закон</div>
-                   <div style={{ padding: "6px 12px", borderRadius: "6px", backgroundColor: "rgba(232,119,34,0.1)", color: "#E87722", fontSize: "12px", fontWeight: 700, display: "flex", alignItems: "center", gap: "6px" }}><Map size={14} /> Масштаб</div>
+                   <div style={{ padding: "6px 12px", borderRadius: "6px", backgroundColor: "rgba(232,119,34,0.1)", color: "#E87722", fontSize: "16px", fontWeight: 700, display: "flex", alignItems: "center", gap: "6px" }}><Award size={14} /> Экспертность</div>
+                   <div style={{ padding: "6px 12px", borderRadius: "6px", backgroundColor: "rgba(232,119,34,0.1)", color: "#E87722", fontSize: "16px", fontWeight: 700, display: "flex", alignItems: "center", gap: "6px" }}><Scale size={14} /> Сервис и закон</div>
+                   <div style={{ padding: "6px 12px", borderRadius: "6px", backgroundColor: "rgba(232,119,34,0.1)", color: "#E87722", fontSize: "16px", fontWeight: 700, display: "flex", alignItems: "center", gap: "6px" }}><Map size={14} /> Масштаб</div>
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
                   {protectionReasons.map((reason, idx) => (
                     <li key={idx} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
                       <Check size={16} color="#E87722" style={{ flexShrink: 0, marginTop: "2px" }} />
-                      <span style={{ fontSize: "13px", color: "#555", lineHeight: 1.5 }}>{reason}</span>
+                      <span style={{ fontSize: "17px", color: "#3F3F3F", lineHeight: 1.5 }}>{reason}</span>
                     </li>
                   ))}
                 </ul>
@@ -295,7 +295,7 @@ export function ServicesSection() {
 
           {/* Steps */}
           <div style={{ backgroundColor: "#F9F9F9", borderRadius: "16px", padding: "24px", border: "1px solid #EBEBEB" }}>
-            <h4 style={{ fontSize: "18px", fontWeight: 800, color: "#222", marginBottom: "20px", textAlign: "center" }}>Как мы работаем (4 простых шага)</h4>
+            <h4 style={{ fontSize: "20px", fontWeight: 800, color: "#222", marginBottom: "20px", textAlign: "center" }}>Как мы работаем (4 простых шага)</h4>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
                {protectionSteps.map((step, idx) => {
                  const SIcon = step.icon;
@@ -303,10 +303,10 @@ export function ServicesSection() {
                    <div key={idx} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
                      <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "#fff", border: "2px solid rgba(109,190,69,0.3)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "12px", position: "relative", boxShadow: "0 4px 12px rgba(0,0,0,0.05)" }}>
                         <SIcon size={20} color="#6DBE45" />
-                        <div style={{ position: "absolute", top: "-6px", right: "-6px", width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "#E87722", color: "#fff", fontSize: "11px", fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>{idx + 1}</div>
+                        <div style={{ position: "absolute", top: "-6px", right: "-6px", width: "20px", height: "20px", borderRadius: "50%", backgroundColor: "#E87722", color: "#fff", fontSize: "15px", fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>{idx + 1}</div>
                      </div>
-                     <div style={{ fontSize: "15px", fontWeight: 800, color: "#333", marginBottom: "6px" }}>{step.title}</div>
-                     <div style={{ fontSize: "12px", color: "#666", lineHeight: 1.4 }}>{step.desc}</div>
+                     <div style={{ fontSize: "17px", fontWeight: 800, color: "#333", marginBottom: "6px" }}>{step.title}</div>
+                     <div style={{ fontSize: "16px", color: "#4A4A4A", lineHeight: 1.4 }}>{step.desc}</div>
                    </div>
                  )
                })}
@@ -323,7 +323,7 @@ export function ServicesSection() {
               color: "#fff",
               padding: "16px 40px",
               borderRadius: "14px",
-              fontSize: "16px",
+              fontSize: "18px",
               fontWeight: 800,
               border: "none",
               cursor: "pointer",

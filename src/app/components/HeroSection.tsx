@@ -83,8 +83,8 @@ export function HeroSection() {
               boxShadow: "0 4px 16px rgba(109,190,69,0.35)",
             }}
           >
-            <div style={{ color: "#fff", fontSize: "22px", fontWeight: 900, lineHeight: 1 }}>2014</div>
-            <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "11px", fontWeight: 600, marginTop: "2px" }}>год основания</div>
+            <div style={{ color: "#fff", fontSize: "24px", fontWeight: 900, lineHeight: 1 }}>2014</div>
+            <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "15px", fontWeight: 600, marginTop: "2px" }}>год основания</div>
           </div>
           {/* Floating badge bottom-left */}
           <div
@@ -98,8 +98,8 @@ export function HeroSection() {
               boxShadow: "0 4px 16px rgba(232,119,34,0.4)",
             }}
           >
-            <div style={{ color: "#fff", fontSize: "18px", fontWeight: 900 }}>от 10 дней</div>
-            <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "11px", fontWeight: 600, marginTop: "2px" }}>производственный цикл</div>
+            <div style={{ color: "#fff", fontSize: "20px", fontWeight: 900 }}>от 10 дней</div>
+            <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "15px", fontWeight: 600, marginTop: "2px" }}>производственный цикл</div>
           </div>
         </div>
 
@@ -126,7 +126,7 @@ export function HeroSection() {
             }}
           >
             <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#E87722", display: "inline-block" }} />
-            <span style={{ color: "#E87722", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+            <span style={{ color: "#E87722", fontSize: "14px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em" }}>
               Производство с 2014 года · Краснодар
             </span>
           </div>
@@ -149,8 +149,8 @@ export function HeroSection() {
           {/* Sub */}
           <p
             style={{
-              color: "#555",
-              fontSize: "clamp(14px, 1.3vw, 17px)",
+              color: "#3F3F3F",
+              fontSize: "clamp(17px, 1.4vw, 19px)",
               lineHeight: 1.7,
               margin: 0,
               maxWidth: "560px",
@@ -174,10 +174,10 @@ export function HeroSection() {
               boxSizing: "border-box",
             }}
           >
-            <div style={{ color: "#222", fontSize: "17px", fontWeight: 900, lineHeight: 1.3, marginBottom: "4px" }}>
+            <div style={{ color: "#222", fontSize: "19px", fontWeight: 900, lineHeight: 1.3, marginBottom: "4px" }}>
               Рассчитаем стоимость по вашим чертежам
             </div>
-            <div style={{ color: "#666", fontSize: "13px", lineHeight: 1.5, marginBottom: "14px" }}>
+            <div style={{ color: "#4A4A4A", fontSize: "17px", lineHeight: 1.5, marginBottom: "14px" }}>
               Оставьте имя и телефон, менеджер свяжется с вами в течение рабочего дня.
             </div>
             <LeadFormCompact source="hero" buttonText="Рассчитать" />
@@ -196,11 +196,11 @@ export function HeroSection() {
                 flexWrap: "wrap",
               }}
             >
-              <span style={{ color: "#fff", fontSize: "13px", fontWeight: 800 }}>
+              <span style={{ color: "#fff", fontSize: "17px", fontWeight: 800 }}>
                 ООО ЭНЕРГИЯ
               </span>
               <span className="tag-sep" style={{ width: "1px", height: "16px", backgroundColor: "rgba(255,255,255,0.4)" }} />
-              <span style={{ color: "#fff", fontSize: "12px", fontWeight: 600 }}>
+              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 600 }}>
                 Сроки от 10 дней
               </span>
             </div>
@@ -215,11 +215,11 @@ export function HeroSection() {
                 flexWrap: "wrap",
               }}
             >
-              <span style={{ color: "#fff", fontSize: "12px", fontWeight: 700 }}>🛡️ Гарантия 3 года</span>
+              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>🛡️ Гарантия 3 года</span>
               <span className="tag-sep" style={{ width: "1px", height: "16px", backgroundColor: "rgba(255,255,255,0.4)" }} />
-              <span style={{ color: "#fff", fontSize: "12px", fontWeight: 700 }}>📄 Фиксированная цена</span>
+              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>📄 Фиксированная цена</span>
               <span className="tag-sep" style={{ width: "1px", height: "16px", backgroundColor: "rgba(255,255,255,0.4)" }} />
-              <span style={{ color: "#fff", fontSize: "12px", fontWeight: 700 }}>🚛 Доставка по России</span>
+              <span style={{ color: "#fff", fontSize: "16px", fontWeight: 700 }}>🚛 Доставка по России</span>
             </div>
           </div>
 
@@ -236,7 +236,7 @@ export function HeroSection() {
                 color: "#fff",
                 padding: "15px 24px",
                 borderRadius: "14px",
-                fontSize: "15px",
+                fontSize: "17px",
                 fontWeight: 800,
                 textDecoration: "none",
                 boxShadow: "0 4px 20px rgba(232,119,34,0.35)",
@@ -266,7 +266,7 @@ export function HeroSection() {
                 color: "#333",
                 padding: "15px 28px",
                 borderRadius: "14px",
-                fontSize: "15px",
+                fontSize: "17px",
                 fontWeight: 700,
                 border: "2px solid #CCCCCC",
                 cursor: "pointer",
@@ -309,7 +309,7 @@ export function HeroSection() {
                 <div style={{ color: "#E87722", fontSize: "clamp(18px, 2vw, 28px)", fontWeight: 900, lineHeight: 1 }}>
                   {stat.value}
                 </div>
-                <div style={{ color: "#888", fontSize: "11px", fontWeight: 500, marginTop: "4px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                <div style={{ color: "#666", fontSize: "13px", fontWeight: 500, marginTop: "4px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                   {stat.label}
                 </div>
               </div>
@@ -338,7 +338,7 @@ export function HeroSection() {
           animation: "heroBounce 2s infinite",
         }}
       >
-        <span style={{ fontSize: "10px", fontFamily: "Montserrat, sans-serif", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+        <span style={{ fontSize: "12px", fontFamily: "Montserrat, sans-serif", textTransform: "uppercase", letterSpacing: "0.1em" }}>
           Листать
         </span>
         <ChevronDown size={18} />
@@ -412,7 +412,7 @@ export function HeroSection() {
           }
           .hero-content { order: 1; flex: 1 1 54%; min-width: 0; gap: 14px !important; }
           .hero-content h1 { font-size: clamp(30px, 3.1vw, 44px) !important; }
-          .hero-content > p { font-size: 15px !important; line-height: 1.55 !important; }
+          .hero-content > p { font-size: 18px !important; line-height: 1.6 !important; }
           .hero-photo { order: 2; flex: 0 0 42%; width: auto !important; height: 640px !important; }
         }
       `}</style>

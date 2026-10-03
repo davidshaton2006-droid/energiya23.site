@@ -52,7 +52,7 @@ export function AboutSection() {
               display: "inline-block",
               backgroundColor: "#6DBE45",
               color: "#fff",
-              fontSize: "12px",
+              fontSize: "14px",
               fontWeight: 800,
               textTransform: "uppercase",
               letterSpacing: "0.12em",
@@ -66,7 +66,7 @@ export function AboutSection() {
           <h2 style={{ color: "#222", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 900, lineHeight: 1.2 }}>
             ООО <span style={{ color: "#6DBE45" }}>ЭНЕРГИЯ</span>
           </h2>
-          <p style={{ color: "#666", fontSize: "16px", marginTop: "12px", maxWidth: "720px", margin: "12px auto 0" }}>
+          <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "720px", margin: "12px auto 0" }}>
             Производитель деталей металлоконструкций промышленного качества. Основана в 2014 году,
             Краснодар. Реализовали проекты в рамках национальных инвестиционных программ и выполнили
             сотни коммерческих B2B-заказов.
@@ -117,10 +117,10 @@ export function AboutSection() {
                 right: "20px",
               }}
             >
-              <div style={{ color: "#fff", fontSize: "14px", fontWeight: 700, marginBottom: "8px" }}>
+              <div style={{ color: "#fff", fontSize: "18px", fontWeight: 700, marginBottom: "8px" }}>
                 90% клиентов возвращаются
               </div>
-              <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "12px" }}>
+              <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "16px" }}>
                 или рекомендуют партнёрам
               </div>
             </div>
@@ -137,8 +137,8 @@ export function AboutSection() {
                 boxShadow: "0 4px 14px rgba(109,190,69,0.35)",
               }}
             >
-              <div style={{ color: "#fff", fontSize: "20px", fontWeight: 900, lineHeight: 1 }}>2014</div>
-              <div style={{ color: "rgba(255,255,255,0.90)", fontSize: "10px", fontWeight: 600 }}>год основания</div>
+              <div style={{ color: "#fff", fontSize: "22px", fontWeight: 900, lineHeight: 1 }}>2014</div>
+              <div style={{ color: "rgba(255,255,255,0.90)", fontSize: "12px", fontWeight: 600 }}>год основания</div>
             </div>
           </div>
 
@@ -153,12 +153,12 @@ export function AboutSection() {
                 border: "1.5px solid #EBEBEB",
               }}
             >
-              <h3 style={{ color: "#E87722", fontSize: "15px", fontWeight: 800, marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+              <h3 style={{ color: "#E87722", fontSize: "17px", fontWeight: 800, marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
                 <CheckCircle size={18} /> Производственные мощности
               </h3>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
                 {equipment.map((item, i) => (
-                  <li key={i} style={{ color: "#444", fontSize: "13px", display: "flex", gap: "8px", alignItems: "flex-start" }}>
+                  <li key={i} style={{ color: "#333", fontSize: "17px", display: "flex", gap: "8px", alignItems: "flex-start" }}>
                     <span style={{ color: "#6DBE45", flexShrink: 0, marginTop: "1px" }}>✓</span>
                     {item}
                   </li>
@@ -175,12 +175,12 @@ export function AboutSection() {
                 border: "1.5px solid #EBEBEB",
               }}
             >
-              <h3 style={{ color: "#E87722", fontSize: "15px", fontWeight: 800, marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
+              <h3 style={{ color: "#E87722", fontSize: "17px", fontWeight: 800, marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
                 <Truck size={18} /> Логистика
               </h3>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
                 {logistics.map((item, i) => (
-                  <li key={i} style={{ color: "#444", fontSize: "13px", display: "flex", gap: "8px", alignItems: "flex-start" }}>
+                  <li key={i} style={{ color: "#333", fontSize: "17px", display: "flex", gap: "8px", alignItems: "flex-start" }}>
                     <span style={{ color: "#E87722", flexShrink: 0, marginTop: "1px" }}>✓</span>
                     {item}
                   </li>
@@ -207,14 +207,14 @@ export function AboutSection() {
               border: "1.5px solid rgba(109,190,69,0.25)",
             }}
           >
-            <h3 style={{ color: "#6DBE45", fontSize: "16px", fontWeight: 800, marginBottom: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <h3 style={{ color: "#6DBE45", fontSize: "18px", fontWeight: 800, marginBottom: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
               <Shield size={20} /> Гарантии и ответственность
             </h3>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
               {guarantees.map((item, i) => (
                 <li key={i} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
-                  <span style={{ color: "#6DBE45", flexShrink: 0, fontWeight: 900, fontSize: "14px" }}>✓</span>
-                  <span style={{ color: "#444", fontSize: "14px", lineHeight: 1.5 }}>{item}</span>
+                  <span style={{ color: "#6DBE45", flexShrink: 0, fontWeight: 900, fontSize: "18px" }}>✓</span>
+                  <span style={{ color: "#333", fontSize: "18px", lineHeight: 1.5 }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -229,7 +229,7 @@ export function AboutSection() {
               border: "1.5px solid rgba(232,119,34,0.20)",
             }}
           >
-            <h3 style={{ color: "#E87722", fontSize: "16px", fontWeight: 800, marginBottom: "20px" }}>
+            <h3 style={{ color: "#E87722", fontSize: "18px", fontWeight: 800, marginBottom: "20px" }}>
               Клиенты и партнёры
             </h3>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -247,13 +247,13 @@ export function AboutSection() {
                       justifyContent: "center",
                       flexShrink: 0,
                       color: "#E87722",
-                      fontSize: "10px",
+                      fontSize: "12px",
                       fontWeight: 900,
                     }}
                   >
                     {i + 1}
                   </span>
-                  <span style={{ color: "#444", fontSize: "14px", lineHeight: 1.5 }}>{item}</span>
+                  <span style={{ color: "#333", fontSize: "18px", lineHeight: 1.5 }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -265,8 +265,8 @@ export function AboutSection() {
                 backgroundColor: "rgba(232,119,34,0.07)",
                 borderRadius: "10px",
                 border: "1px solid rgba(232,119,34,0.15)",
-                color: "#555",
-                fontSize: "13px",
+                color: "#3F3F3F",
+                fontSize: "17px",
                 lineHeight: 1.6,
               }}
             >

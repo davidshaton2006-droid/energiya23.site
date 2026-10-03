@@ -29,15 +29,15 @@ const fieldStyle = {
   border: "1.5px solid #E0E0E0",
   backgroundColor: "#FFFFFF",
   color: "#222",
-  fontSize: "15px",
+  fontSize: "17px",
   fontFamily: "Montserrat, sans-serif",
   outline: "none",
 };
 
 const labelStyle = {
   display: "block",
-  color: "#555",
-  fontSize: "12px",
+  color: "#3F3F3F",
+  fontSize: "14px",
   fontWeight: 700,
   marginBottom: "6px",
   textTransform: "uppercase" as const,
@@ -99,10 +99,10 @@ function LeadForm() {
         >
           ✓
         </div>
-        <h3 style={{ color: "#222", fontSize: "20px", fontWeight: 900, marginBottom: "8px" }}>
+        <h3 style={{ color: "#222", fontSize: "22px", fontWeight: 900, marginBottom: "8px" }}>
           Спасибо, заявка отправлена!
         </h3>
-        <p style={{ color: "#666", fontSize: "14px", lineHeight: 1.6, marginBottom: "20px" }}>
+        <p style={{ color: "#4A4A4A", fontSize: "18px", lineHeight: 1.6, marginBottom: "20px" }}>
           Мы свяжемся с вами в течение рабочего дня.
         </p>
         <button
@@ -114,7 +114,7 @@ function LeadForm() {
             color: "#E87722",
             padding: "10px 20px",
             borderRadius: "10px",
-            fontSize: "13px",
+            fontSize: "17px",
             fontWeight: 700,
             cursor: "pointer",
             fontFamily: "Montserrat, sans-serif",
@@ -130,7 +130,7 @@ function LeadForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-      <h3 style={{ color: "#222", fontSize: "20px", fontWeight: 900, margin: 0 }}>
+      <h3 style={{ color: "#222", fontSize: "22px", fontWeight: 900, margin: 0 }}>
         Оставить <span style={{ color: "#E87722" }}>заявку</span>
       </h3>
 
@@ -146,7 +146,7 @@ function LeadForm() {
           placeholder="Как к вам обращаться"
           style={{ ...fieldStyle, borderColor: errors.name ? "#D93025" : "#E0E0E0" }}
         />
-        {errors.name && <div style={{ color: "#D93025", fontSize: "12px", marginTop: "4px" }}>{errors.name}</div>}
+        {errors.name && <div style={{ color: "#D93025", fontSize: "16px", marginTop: "4px" }}>{errors.name}</div>}
       </div>
 
       <div>
@@ -161,7 +161,7 @@ function LeadForm() {
           placeholder="+7 (___) ___-__-__"
           style={{ ...fieldStyle, borderColor: errors.phone ? "#D93025" : "#E0E0E0" }}
         />
-        {errors.phone && <div style={{ color: "#D93025", fontSize: "12px", marginTop: "4px" }}>{errors.phone}</div>}
+        {errors.phone && <div style={{ color: "#D93025", fontSize: "16px", marginTop: "4px" }}>{errors.phone}</div>}
       </div>
 
       <div>
@@ -198,7 +198,7 @@ function LeadForm() {
             color: "#B3261E",
             padding: "12px 14px",
             borderRadius: "10px",
-            fontSize: "13px",
+            fontSize: "17px",
             lineHeight: 1.5,
           }}
         >
@@ -215,7 +215,7 @@ function LeadForm() {
           border: "none",
           padding: "16px 24px",
           borderRadius: "12px",
-          fontSize: "15px",
+          fontSize: "17px",
           fontWeight: 800,
           fontFamily: "Montserrat, sans-serif",
           cursor: sending ? "default" : "pointer",
@@ -226,7 +226,7 @@ function LeadForm() {
         {sending ? "Отправляем…" : "Отправить заявку"}
       </button>
 
-      <p style={{ color: "#888", fontSize: "12px", lineHeight: 1.5, margin: 0, textAlign: "center" }}>
+      <p style={{ color: "#666", fontSize: "16px", lineHeight: 1.5, margin: 0, textAlign: "center" }}>
         Отправляя форму, вы соглашаетесь с{" "}
         <a href="/privacy/" target="_blank" rel="noopener" style={{ color: "#E87722" }}>
           Политикой конфиденциальности
@@ -256,7 +256,7 @@ export function ContactSection() {
                 display: "inline-block",
                 backgroundColor: "#6DBE45",
                 color: "#fff",
-                fontSize: "12px",
+                fontSize: "14px",
                 fontWeight: 800,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
@@ -270,7 +270,7 @@ export function ContactSection() {
             <h2 style={{ color: "#222", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 900 }}>
               Приглашаем к <span style={{ color: "#6DBE45" }}>постоянному сотрудничеству</span>
             </h2>
-            <p style={{ color: "#666", fontSize: "16px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
+            <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
               ООО ЭНЕРГИЯ выстраивает с каждым клиентом стабильные, долгосрочные
               партнёрские отношения. Для постоянных партнёров — максимально комфортные условия.
             </p>
@@ -287,14 +287,14 @@ export function ContactSection() {
                 boxShadow: "0 4px 16px rgba(0,0,0,0.05)",
               }}
             >
-              <h3 style={{ color: "#6DBE45", fontSize: "17px", fontWeight: 800, marginBottom: "24px" }}>
+              <h3 style={{ color: "#6DBE45", fontSize: "19px", fontWeight: 800, marginBottom: "24px" }}>
                 Почему нас выбирают партнёры:
               </h3>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
                 {partnerBenefits.map((b, i) => (
                   <li key={i} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                     <span style={{ color: "#6DBE45", fontWeight: 900, flexShrink: 0 }}>✓</span>
-                    <span style={{ color: "#444", fontSize: "14px", lineHeight: 1.5 }}>{b}</span>
+                    <span style={{ color: "#333", fontSize: "18px", lineHeight: 1.5 }}>{b}</span>
                   </li>
                 ))}
               </ul>
@@ -312,7 +312,7 @@ export function ContactSection() {
                   boxShadow: "0 4px 16px rgba(0,0,0,0.05)",
                 }}
               >
-                <h3 style={{ color: "#E87722", fontSize: "17px", fontWeight: 800, marginBottom: "24px" }}>
+                <h3 style={{ color: "#E87722", fontSize: "19px", fontWeight: 800, marginBottom: "24px" }}>
                   Как начать сотрудничество:
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -328,14 +328,14 @@ export function ContactSection() {
                           alignItems: "center",
                           justifyContent: "center",
                           color: "#fff",
-                          fontSize: "14px",
+                          fontSize: "18px",
                           fontWeight: 900,
                           flexShrink: 0,
                         }}
                       >
                         {step.num}
                       </div>
-                      <span style={{ color: "#444", fontSize: "14px", lineHeight: 1.6, paddingTop: "6px" }}>
+                      <span style={{ color: "#333", fontSize: "18px", lineHeight: 1.6, paddingTop: "6px" }}>
                         {step.text}
                       </span>
                     </div>
@@ -353,7 +353,7 @@ export function ContactSection() {
                   boxShadow: "0 4px 16px rgba(0,0,0,0.05)",
                 }}
               >
-                <p style={{ color: "#555", fontSize: "14px", marginBottom: "16px", lineHeight: 1.6 }}>
+                <p style={{ color: "#3F3F3F", fontSize: "18px", marginBottom: "16px", lineHeight: 1.6 }}>
                   Мы неустанно развиваем производство и расширяем мощности, ориентируясь на
                   потребности наших партнёров.
                 </p>
@@ -366,7 +366,7 @@ export function ContactSection() {
                     color: "#fff",
                     padding: "14px 24px",
                     borderRadius: "12px",
-                    fontSize: "15px",
+                    fontSize: "17px",
                     fontWeight: 800,
                     textDecoration: "none",
                     textAlign: "center",
@@ -402,7 +402,7 @@ export function ContactSection() {
                 display: "inline-block",
                 backgroundColor: "#E87722",
                 color: "#fff",
-                fontSize: "12px",
+                fontSize: "14px",
                 fontWeight: 800,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
@@ -416,7 +416,7 @@ export function ContactSection() {
             <h2 style={{ color: "#222", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 900 }}>
               Свяжитесь с <span style={{ color: "#E87722" }}>нами</span>
             </h2>
-            <p style={{ color: "#666", fontSize: "16px", marginTop: "12px", maxWidth: "580px", margin: "12px auto 0" }}>
+            <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "580px", margin: "12px auto 0" }}>
               Готовы подготовить коммерческое предложение под ваш проект.
               Отправьте спецификацию или чертежи — свяжемся в течение рабочего дня.
             </p>
@@ -503,10 +503,10 @@ export function ContactSection() {
                       <Icon size={20} color={item.color} />
                     </div>
                     <div>
-                      <div style={{ color: "#999", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "4px" }}>
+                      <div style={{ color: "#999", fontSize: "13px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "4px" }}>
                         {item.label}
                       </div>
-                      <div style={{ color: "#222", fontSize: "14px", fontWeight: 700 }}>{item.value}</div>
+                      <div style={{ color: "#222", fontSize: "18px", fontWeight: 700 }}>{item.value}</div>
                     </div>
                   </div>
                 );
@@ -529,10 +529,10 @@ export function ContactSection() {
                   border: "1.5px solid #EBEBEB",
                 }}
               >
-                <div style={{ color: "#999", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "10px" }}>
+                <div style={{ color: "#999", fontSize: "13px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "10px" }}>
                   Реквизиты компании
                 </div>
-                <div style={{ color: "#555", fontSize: "13px", lineHeight: 1.8 }}>
+                <div style={{ color: "#3F3F3F", fontSize: "17px", lineHeight: 1.8 }}>
                   <div style={{ fontWeight: 700, color: "#222" }}>ООО ЭНЕРГИЯ</div>
                   <div>ИНН: 2348036088 | ОГРН: 1142348000332</div>
                 </div>
@@ -544,7 +544,7 @@ export function ContactSection() {
                     color: "#E87722",
                     padding: "8px 16px",
                     borderRadius: "8px",
-                    fontSize: "12px",
+                    fontSize: "16px",
                     fontWeight: 700,
                     cursor: "pointer",
                     fontFamily: "Montserrat, sans-serif",

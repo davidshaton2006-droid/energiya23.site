@@ -37,7 +37,7 @@ export function Footer() {
           {/* Company info */}
           <div style={{ gridColumn: "span 1" }}>
             <Logo />
-            <p style={{ color: "#999", fontSize: "13px", lineHeight: 1.7, marginTop: "16px", maxWidth: "280px" }}>
+            <p style={{ color: "#999", fontSize: "15px", lineHeight: 1.7, marginTop: "16px", maxWidth: "280px" }}>
               Производство деталей металлоконструкций промышленного качества для строительства
               складов, ангаров и промышленных зданий.
             </p>
@@ -103,7 +103,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 style={{ color: "#fff", fontSize: "14px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "20px" }}>
+            <h4 style={{ color: "#fff", fontSize: "16px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "20px" }}>
               Разделы сайта
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -116,7 +116,7 @@ export function Footer() {
                       border: "none",
                       cursor: "pointer",
                       color: "#999",
-                      fontSize: "13px",
+                      fontSize: "15px",
                       fontFamily: "Montserrat, sans-serif",
                       padding: "6px 0",
                       textAlign: "left",
@@ -134,7 +134,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 style={{ color: "#fff", fontSize: "14px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "20px" }}>
+            <h4 style={{ color: "#fff", fontSize: "16px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "20px" }}>
               Услуги
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -150,7 +150,7 @@ export function Footer() {
                 ["Доставка по России", "/dostavka-metallokonstrukcij/"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <a href={href} style={{ color: "#999", fontSize: "13px", textDecoration: "none", display: "inline-block", padding: "4px 0" }}>{label}</a>
+                  <a href={href} style={{ color: "#999", fontSize: "15px", textDecoration: "none", display: "inline-block", padding: "4px 0" }}>{label}</a>
                 </li>
               ))}
             </ul>
@@ -158,15 +158,15 @@ export function Footer() {
 
           {/* Contacts */}
           <div>
-            <h4 style={{ color: "#fff", fontSize: "14px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "20px" }}>
+            <h4 style={{ color: "#fff", fontSize: "16px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "20px" }}>
               Контакты
             </h4>
             <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
               <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                 <Phone size={15} color="#E87722" style={{ flexShrink: 0, marginTop: "2px" }} />
                 <div>
-                  <div style={{ color: "#777", fontSize: "11px", marginBottom: "2px" }}>Телефон</div>
-                  <a href="tel:+79604933356" style={{ color: "#fff", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}>
+                  <div style={{ color: "#777", fontSize: "13px", marginBottom: "2px" }}>Телефон</div>
+                  <a href="tel:+79604933356" style={{ color: "#fff", fontSize: "16px", fontWeight: 700, textDecoration: "none" }}>
                     +7 (960) 493-33-56
                   </a>
                 </div>
@@ -174,8 +174,8 @@ export function Footer() {
               <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                 <Mail size={15} color="#6DBE45" style={{ flexShrink: 0, marginTop: "2px" }} />
                 <div>
-                  <div style={{ color: "#777", fontSize: "11px", marginBottom: "2px" }}>Email</div>
-                  <a href="mailto:energiya787@mail.ru" style={{ color: "#fff", fontSize: "13px", fontWeight: 600, textDecoration: "none" }}>
+                  <div style={{ color: "#777", fontSize: "13px", marginBottom: "2px" }}>Email</div>
+                  <a href="mailto:energiya787@mail.ru" style={{ color: "#fff", fontSize: "15px", fontWeight: 600, textDecoration: "none" }}>
                     energiya787@mail.ru
                   </a>
                 </div>
@@ -183,13 +183,13 @@ export function Footer() {
               <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
                 <MapPin size={15} color="#E87722" style={{ flexShrink: 0, marginTop: "2px" }} />
                 <div>
-                  <div style={{ color: "#777", fontSize: "11px", marginBottom: "2px" }}>Адрес</div>
-                  <div style={{ color: "#ccc", fontSize: "13px", lineHeight: 1.5 }}>
+                  <div style={{ color: "#777", fontSize: "13px", marginBottom: "2px" }}>Адрес</div>
+                  <div style={{ color: "#ccc", fontSize: "15px", lineHeight: 1.5 }}>
                     г. Краснодар,<br />ул. Ростовское шоссе 14/2
                   </div>
                 </div>
               </div>
-              <div style={{ color: "#999", fontSize: "12px" }}>
+              <div style={{ color: "#999", fontSize: "14px" }}>
                 <span style={{ color: "#6DBE45", fontWeight: 600 }}>Пн–Пт:</span> 8:00–17:00
               </div>
             </div>
@@ -206,7 +206,7 @@ export function Footer() {
                 color: "#fff",
                 padding: "12px 22px",
                 borderRadius: "10px",
-                fontSize: "13px",
+                fontSize: "15px",
                 fontWeight: 800,
                 textDecoration: "none",
                 fontFamily: "Montserrat, sans-serif",
@@ -236,10 +236,10 @@ export function Footer() {
             gap: "12px",
           }}
         >
-          <div style={{ color: "#777", fontSize: "12px" }}>
+          <div style={{ color: "#777", fontSize: "14px" }}>
             © 2014–2026 ООО ЭНЕРГИЯ. Производство деталей металлоконструкций в Краснодаре.
           </div>
-          <div style={{ color: "#666", fontSize: "12px" }}>
+          <div style={{ color: "#666", fontSize: "14px" }}>
             г. Краснодар, ул. Ростовское шоссе 14/2 | +7 (960) 493-33-56 |{" "}
             <a href="/privacy/" style={{ color: "#999", textDecoration: "underline" }}>
               Политика конфиденциальности

@@ -46,7 +46,7 @@ export function OfferSection() {
                 display: "inline-block",
                 backgroundColor: "#6DBE45",
                 color: "#fff",
-                fontSize: "12px",
+                fontSize: "14px",
                 fontWeight: 800,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
@@ -68,7 +68,7 @@ export function OfferSection() {
             >
               Боитесь сорванных сроков и <span style={{ color: "#E87722" }}>доплат при монтаже?</span>
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.78)", fontSize: "clamp(15px, 1.4vw, 18px)", lineHeight: 1.65, margin: "16px 0 0", maxWidth: "620px" }}>
+            <p style={{ color: "rgba(255,255,255,0.78)", fontSize: "clamp(17px, 1.4vw, 20px)", lineHeight: 1.65, margin: "16px 0 0", maxWidth: "620px" }}>
               Закрепим цену и сроки в договоре и сделаем детали строго по вашим чертежам. Они приедут на объект
               маркированными и готовыми к монтажу без доработок.
             </p>
@@ -86,10 +86,10 @@ export function OfferSection() {
                     padding: "16px 18px",
                   }}
                 >
-                  <div style={{ color: "#FF9A57", fontSize: "13px", fontWeight: 800, marginBottom: "6px", textDecoration: "line-through", textDecorationColor: "rgba(255,154,87,0.5)" }}>
+                  <div style={{ color: "#FF9A57", fontSize: "17px", fontWeight: 800, marginBottom: "6px", textDecoration: "line-through", textDecorationColor: "rgba(255,154,87,0.5)" }}>
                     {p.pain}
                   </div>
-                  <div style={{ color: "#fff", fontSize: "14px", lineHeight: 1.5 }}>
+                  <div style={{ color: "#fff", fontSize: "18px", lineHeight: 1.5 }}>
                     <span style={{ color: "#6DBE45", fontWeight: 900 }}>✓ </span>
                     {p.fix}
                   </div>
@@ -109,7 +109,7 @@ export function OfferSection() {
             <h3 style={{ color: "#222", fontSize: "clamp(20px, 2.2vw, 24px)", fontWeight: 900, lineHeight: 1.25, margin: "0 0 6px" }}>
               Получите расчёт стоимости и сроков по вашим чертежам
             </h3>
-            <p style={{ color: "#666", fontSize: "14px", lineHeight: 1.55, margin: "0 0 18px" }}>
+            <p style={{ color: "#666", fontSize: "18px", lineHeight: 1.55, margin: "0 0 18px" }}>
               Оставьте имя и телефон. Менеджер свяжется с вами в течение рабочего дня и уточнит детали.
             </p>
             <LeadFormCompact source="offer" buttonText="Получить расчёт" />

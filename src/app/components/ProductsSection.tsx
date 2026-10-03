@@ -78,7 +78,7 @@ export function ProductsSection() {
               display: "inline-block",
               backgroundColor: "#6DBE45",
               color: "#fff",
-              fontSize: "12px",
+              fontSize: "14px",
               fontWeight: 800,
               textTransform: "uppercase",
               letterSpacing: "0.12em",
@@ -93,7 +93,7 @@ export function ProductsSection() {
             Детали металлоконструкций для{" "}
             <span style={{ color: "#6DBE45" }}>складов, ангаров</span> и промышленных зданий
           </h2>
-          <p style={{ color: "#666", fontSize: "16px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
+          <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
             ООО ЭНЕРГИЯ производит полный комплект деталей металлоконструкций
             промышленного качества, готовых к монтажу без доработок
           </p>
@@ -110,7 +110,7 @@ export function ProductsSection() {
             boxShadow: "0 4px 18px rgba(0,0,0,0.06)",
           }}
         >
-          <h3 style={{ color: "#6DBE45", fontSize: "18px", fontWeight: 800, marginBottom: "20px" }}>
+          <h3 style={{ color: "#6DBE45", fontSize: "20px", fontWeight: 800, marginBottom: "20px" }}>
             Мы производим:
           </h3>
           <div
@@ -123,7 +123,7 @@ export function ProductsSection() {
             {whatWeProduce.map((item, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <ChevronRight size={16} color="#E87722" style={{ flexShrink: 0 }} />
-                <span style={{ color: "#333", fontSize: "14px", fontWeight: 500 }}>{item}</span>
+                <span style={{ color: "#333", fontSize: "18px", fontWeight: 500 }}>{item}</span>
               </div>
             ))}
           </div>
@@ -132,8 +132,8 @@ export function ProductsSection() {
               marginTop: "24px",
               paddingTop: "20px",
               borderTop: "1px solid #F0F0F0",
-              color: "#666",
-              fontSize: "14px",
+              color: "#4A4A4A",
+              fontSize: "18px",
               lineHeight: 1.7,
             }}
           >
@@ -187,7 +187,7 @@ export function ProductsSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "14px",
+                  fontSize: "18px",
                   fontWeight: 900,
                   color: "#fff",
                 }}
@@ -195,16 +195,16 @@ export function ProductsSection() {
                 {String(idx + 1).padStart(2, "0")}
               </div>
 
-              <h3 style={{ color: "#222", fontSize: "15px", fontWeight: 800, lineHeight: 1.4, margin: 0 }}>
+              <h3 style={{ color: "#222", fontSize: "17px", fontWeight: 800, lineHeight: 1.4, margin: 0 }}>
                 {cat.title}
               </h3>
-              <p style={{ color: "#777", fontSize: "13px", lineHeight: 1.6, margin: 0 }}>{cat.desc}</p>
+              <p style={{ color: "#5A5A5A", fontSize: "17px", lineHeight: 1.6, margin: 0 }}>{cat.desc}</p>
 
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
                 {cat.items.map((item, i) => (
                   <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
                     <span style={{ width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#6DBE45", flexShrink: 0, marginTop: "7px" }} />
-                    <span style={{ color: "#444", fontSize: "13px", lineHeight: 1.5 }}>{item}</span>
+                    <span style={{ color: "#333", fontSize: "17px", lineHeight: 1.5 }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -221,7 +221,7 @@ export function ProductsSection() {
               color: "#fff",
               padding: "16px 40px",
               borderRadius: "14px",
-              fontSize: "16px",
+              fontSize: "18px",
               fontWeight: 800,
               border: "none",
               cursor: "pointer",

@@ -15,7 +15,7 @@ export function MissionSection() {
             display: "inline-block",
             backgroundColor: "#6DBE45",
             color: "#fff",
-            fontSize: "12px",
+            fontSize: "14px",
             fontWeight: 800,
             textTransform: "uppercase",
             letterSpacing: "0.12em",
@@ -43,8 +43,8 @@ export function MissionSection() {
 
         <p
           style={{
-            color: "#555",
-            fontSize: "clamp(15px, 1.3vw, 18px)",
+            color: "#3F3F3F",
+            fontSize: "clamp(17px, 1.3vw, 20px)",
             lineHeight: 1.8,
             marginBottom: "28px",
           }}
@@ -69,7 +69,7 @@ export function MissionSection() {
           <p
             style={{
               color: "#333",
-              fontSize: "clamp(15px, 1.4vw, 19px)",
+              fontSize: "clamp(17px, 1.4vw, 21px)",
               fontWeight: 700,
               lineHeight: 1.6,
               margin: 0,
@@ -101,7 +101,7 @@ export function MissionSection() {
               <div style={{ color: s.color, fontSize: "clamp(22px, 2.5vw, 32px)", fontWeight: 900, lineHeight: 1 }}>
                 {s.value}
               </div>
-              <div style={{ color: "#888", fontSize: "12px", fontWeight: 600, marginTop: "4px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <div style={{ color: "#666", fontSize: "14px", fontWeight: 600, marginTop: "4px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                 {s.label}
               </div>
             </div>

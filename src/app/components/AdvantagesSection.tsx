@@ -43,7 +43,7 @@ export function AdvantagesSection() {
               display: "inline-block",
               backgroundColor: "#E87722",
               color: "#fff",
-              fontSize: "12px",
+              fontSize: "14px",
               fontWeight: 800,
               textTransform: "uppercase",
               letterSpacing: "0.12em",
@@ -117,13 +117,13 @@ export function AdvantagesSection() {
                     boxShadow: "0 4px 12px rgba(232,119,34,0.30)",
                   }}
                 >
-                  <span style={{ color: "#fff", fontSize: "16px", fontWeight: 900 }}>{adv.num}</span>
+                  <span style={{ color: "#fff", fontSize: "18px", fontWeight: 900 }}>{adv.num}</span>
                 </div>
                 <div>
-                  <div style={{ color: "#222", fontSize: "17px", fontWeight: 800, lineHeight: 1.3 }}>
+                  <div style={{ color: "#222", fontSize: "19px", fontWeight: 800, lineHeight: 1.3 }}>
                     {adv.title}
                   </div>
-                  <div style={{ color: "#E87722", fontSize: "12px", fontWeight: 600, marginTop: "2px" }}>
+                  <div style={{ color: "#E87722", fontSize: "16px", fontWeight: 600, marginTop: "2px" }}>
                     {adv.sub}
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export function AdvantagesSection() {
               <div style={{ height: "1px", backgroundColor: "#F0F0F0" }} />
 
               {/* Text */}
-              <p style={{ color: "#666", fontSize: "14px", lineHeight: 1.7, margin: 0 }}>
+              <p style={{ color: "#4A4A4A", fontSize: "18px", lineHeight: 1.7, margin: 0 }}>
                 {adv.text}
               </p>
             </div>

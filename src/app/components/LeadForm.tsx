@@ -34,8 +34,8 @@ const css = `
 }
 .lf-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(232,119,34,.4); }
 .lf-btn:disabled { opacity: .7; cursor: default; }
-.lf-err { color: #D93025; font-size: 12px; margin-top: 4px; }
-.lf-note { color: #888; font-size: 12px; line-height: 1.45; margin: 0; }
+.lf-err { color: #D93025; font-size: 13px; margin-top: 4px; }
+.lf-note { color: #666; font-size: 13px; line-height: 1.45; margin: 0; }
 .lf-note a { color: #E87722; }
 .lf-ok { background: #EEF8E8; border: 1.5px solid #6DBE45; border-radius: 14px; padding: 16px 18px; color: #222; font-size: 15px; font-weight: 700; line-height: 1.5; }
 .lf-alert { background: rgba(217,48,37,.08); border: 1.5px solid rgba(217,48,37,.3); color: #B3261E; padding: 10px 12px; border-radius: 10px; font-size: 13px; line-height: 1.45; }

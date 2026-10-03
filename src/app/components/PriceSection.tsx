@@ -72,7 +72,7 @@ export function PriceSection() {
               display: "inline-block",
               backgroundColor: "#E87722",
               color: "#fff",
-              fontSize: "12px",
+              fontSize: "14px",
               fontWeight: 800,
               textTransform: "uppercase",
               letterSpacing: "0.12em",
@@ -87,7 +87,7 @@ export function PriceSection() {
             Цены на производство{" "}
             <span style={{ color: "#E87722" }}>деталей металлоконструкций</span>
           </h2>
-          <p style={{ color: "#666", fontSize: "16px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
+          <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "640px", margin: "12px auto 0" }}>
             Стоимость производства формируется индивидуально. Для точного расчёта отправьте
             проектную документацию или спецификацию.
           </p>
@@ -115,13 +115,13 @@ export function PriceSection() {
               gap: "16px",
             }}
           >
-            <div style={{ color: "#fff", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            <div style={{ color: "#fff", fontSize: "15px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Вид работы
             </div>
-            <div style={{ color: "#fff", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            <div style={{ color: "#fff", fontSize: "15px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Примечание
             </div>
-            <div style={{ color: "#fff", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em", minWidth: "100px", textAlign: "right" }}>
+            <div style={{ color: "#fff", fontSize: "15px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em", minWidth: "100px", textAlign: "right" }}>
               Цена
             </div>
           </div>
@@ -131,7 +131,7 @@ export function PriceSection() {
             className="price-mobile-header"
             style={{ backgroundColor: "#E87722", padding: "14px 20px", display: "none" }}
           >
-            <div style={{ color: "#fff", fontSize: "13px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            <div style={{ color: "#fff", fontSize: "15px", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Прайс-лист
             </div>
           </div>
@@ -159,15 +159,15 @@ export function PriceSection() {
                 (e.currentTarget as HTMLDivElement).style.backgroundColor = idx % 2 === 0 ? "#FFFFFF" : "#FAFAFA";
               }}
             >
-              <div className="price-col-service" style={{ color: "#333", fontSize: "14px", lineHeight: 1.5 }}>{row.service}</div>
-              <div className="price-col-note" style={{ color: "#888", fontSize: "13px", lineHeight: 1.5 }}>{row.note}</div>
+              <div className="price-col-service" style={{ color: "#333", fontSize: "18px", lineHeight: 1.5 }}>{row.service}</div>
+              <div className="price-col-note" style={{ color: "#666", fontSize: "17px", lineHeight: 1.5 }}>{row.note}</div>
               <div
                 className="price-col-price"
                 style={{
                   minWidth: "100px",
                   textAlign: "right",
                   color: row.highlight ? "#6DBE45" : "#E87722",
-                  fontSize: "15px",
+                  fontSize: "17px",
                   fontWeight: 800,
                   whiteSpace: "nowrap",
                 }}
@@ -186,8 +186,8 @@ export function PriceSection() {
             padding: "24px 28px",
             border: "1.5px solid rgba(109,190,69,0.25)",
             marginBottom: "32px",
-            color: "#555",
-            fontSize: "14px",
+            color: "#3F3F3F",
+            fontSize: "18px",
             lineHeight: 1.8,
           }}
         >
@@ -195,7 +195,7 @@ export function PriceSection() {
           срокам производства — позвоните нам или отправьте спецификацию. Коммерческое предложение
           готовим под конкретный проект, сроки и бюджет клиента.
           <br />
-          <span style={{ color: "#888" }}>Отдел продаж: пн–пт 8:00–17:00</span>
+          <span style={{ color: "#666" }}>Отдел продаж: пн–пт 8:00–17:00</span>
           <span style={{ margin: "0 12px", color: "#CCC" }}>|</span>
           <a href="tel:+79604933356" style={{ color: "#E87722", fontWeight: 700, textDecoration: "none" }}>
             +7 (960) 493-33-56
@@ -211,7 +211,7 @@ export function PriceSection() {
               color: "#fff",
               padding: "16px 40px",
               borderRadius: "14px",
-              fontSize: "16px",
+              fontSize: "18px",
               fontWeight: 800,
               border: "none",
               cursor: "pointer",

@@ -62,7 +62,7 @@ export function GalleryReviews() {
                 display: "inline-block",
                 backgroundColor: "#6DBE45",
                 color: "#fff",
-                fontSize: "12px",
+                fontSize: "14px",
                 fontWeight: 800,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
@@ -127,7 +127,7 @@ export function GalleryReviews() {
                     padding: "8px 14px",
                   }}
                 >
-                  <span style={{ color: "#fff", fontSize: "13px", fontWeight: 700 }}>{img.label}</span>
+                  <span style={{ color: "#fff", fontSize: "17px", fontWeight: 700 }}>{img.label}</span>
                 </div>
               </div>
             ))}
@@ -151,7 +151,7 @@ export function GalleryReviews() {
                 display: "inline-block",
                 backgroundColor: "#E87722",
                 color: "#fff",
-                fontSize: "12px",
+                fontSize: "14px",
                 fontWeight: 800,
                 textTransform: "uppercase",
                 letterSpacing: "0.12em",
@@ -207,15 +207,15 @@ export function GalleryReviews() {
                 </div>
 
                 {/* Text */}
-                <p style={{ color: "#555", fontSize: "14px", lineHeight: 1.7, margin: 0, flexGrow: 1, fontStyle: "italic" }}>
+                <p style={{ color: "#3F3F3F", fontSize: "18px", lineHeight: 1.7, margin: 0, flexGrow: 1, fontStyle: "italic" }}>
                   «{review.text}»
                 </p>
 
                 {/* Author */}
                 <div style={{ borderTop: "1px solid #F0F0F0", paddingTop: "16px" }}>
-                  <div style={{ color: "#222", fontSize: "14px", fontWeight: 800 }}>{review.name}</div>
-                  <div style={{ color: "#6DBE45", fontSize: "12px", fontWeight: 600 }}>{review.company}</div>
-                  <div style={{ color: "#999", fontSize: "12px" }}>{review.role}</div>
+                  <div style={{ color: "#222", fontSize: "18px", fontWeight: 800 }}>{review.name}</div>
+                  <div style={{ color: "#6DBE45", fontSize: "16px", fontWeight: 600 }}>{review.company}</div>
+                  <div style={{ color: "#999", fontSize: "16px" }}>{review.role}</div>
                 </div>
               </div>
             ))}

@@ -57,7 +57,7 @@ export function ForWhoSection() {
               display: "inline-block",
               backgroundColor: "#6DBE45",
               color: "#fff",
-              fontSize: "12px",
+              fontSize: "14px",
               fontWeight: 800,
               textTransform: "uppercase",
               letterSpacing: "0.12em",
@@ -78,7 +78,7 @@ export function ForWhoSection() {
           >
             Для кого мы <span style={{ color: "#6DBE45" }}>работаем</span>
           </h2>
-          <p style={{ color: "#666", fontSize: "16px", marginTop: "12px", maxWidth: "560px", margin: "12px auto 0" }}>
+          <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "560px", margin: "12px auto 0" }}>
             Комплексные решения для B2B-заказчиков в строительстве и промышленности
           </p>
         </div>
@@ -139,9 +139,9 @@ export function ForWhoSection() {
                 <h3
                   style={{
                     color: "#222",
-                    fontSize: "16px",
+                    fontSize: "23px",
                     fontWeight: 800,
-                    lineHeight: 1.4,
+                    lineHeight: 1.3,
                     marginBottom: "20px",
                   }}
                 >
@@ -159,10 +159,10 @@ export function ForWhoSection() {
                           borderRadius: "50%",
                           backgroundColor: group.color,
                           flexShrink: 0,
-                          marginTop: "7px",
+                          marginTop: "11px",
                         }}
                       />
-                      <span style={{ color: "#555", fontSize: "13px", lineHeight: 1.6 }}>{item}</span>
+                      <span style={{ color: "#3F3F3F", fontSize: "17px", lineHeight: 1.6 }}>{item}</span>
                     </li>
                   ))}
                 </ul>

@@ -41,7 +41,7 @@ export function VacanciesSection() {
               display: "inline-block",
               backgroundColor: "#6DBE45",
               color: "#fff",
-              fontSize: "12px",
+              fontSize: "14px",
               fontWeight: 800,
               textTransform: "uppercase",
               letterSpacing: "0.12em",
@@ -55,7 +55,7 @@ export function VacanciesSection() {
           <h2 style={{ color: "#222", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 900, lineHeight: 1.2 }}>
             Работа в ООО <span style={{ color: "#6DBE45" }}>ЭНЕРГИЯ</span>
           </h2>
-          <p style={{ color: "#666", fontSize: "16px", marginTop: "12px", maxWidth: "580px", margin: "12px auto 0" }}>
+          <p style={{ color: "#4A4A4A", fontSize: "18px", marginTop: "12px", maxWidth: "580px", margin: "12px auto 0" }}>
             Ищем квалифицированных специалистов, готовых работать в команде профессионалов.
             Если вам близки точность, ответственность и стабильность — добро пожаловать.
           </p>
@@ -64,7 +64,7 @@ export function VacanciesSection() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px" }}>
           {/* Vacancies list */}
           <div>
-            <h3 style={{ color: "#E87722", fontSize: "16px", fontWeight: 800, marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+            <h3 style={{ color: "#E87722", fontSize: "18px", fontWeight: 800, marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
               <Briefcase size={20} /> Открытые вакансии:
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -103,7 +103,7 @@ export function VacanciesSection() {
                         alignItems: "center",
                         justifyContent: "center",
                         color: "#fff",
-                        fontSize: "11px",
+                        fontSize: "15px",
                         fontWeight: 900,
                         flexShrink: 0,
                         marginTop: "1px",
@@ -112,10 +112,10 @@ export function VacanciesSection() {
                       {idx + 1}
                     </span>
                     <div>
-                      <div style={{ color: "#222", fontSize: "14px", fontWeight: 700, marginBottom: "4px" }}>
+                      <div style={{ color: "#222", fontSize: "18px", fontWeight: 700, marginBottom: "4px" }}>
                         {v.title}
                       </div>
-                      <div style={{ color: "#888", fontSize: "12px", lineHeight: 1.5 }}>{v.req}</div>
+                      <div style={{ color: "#666", fontSize: "16px", lineHeight: 1.5 }}>{v.req}</div>
                     </div>
                   </div>
                 </div>
@@ -133,14 +133,14 @@ export function VacanciesSection() {
                 border: "1.5px solid rgba(109,190,69,0.25)",
               }}
             >
-              <h3 style={{ color: "#6DBE45", fontSize: "16px", fontWeight: 800, marginBottom: "20px" }}>
+              <h3 style={{ color: "#6DBE45", fontSize: "18px", fontWeight: 800, marginBottom: "20px" }}>
                 Мы предлагаем:
               </h3>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
                 {benefits.map((b, i) => (
                   <li key={i} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
-                    <span style={{ color: "#6DBE45", fontWeight: 900, fontSize: "14px", flexShrink: 0 }}>✓</span>
-                    <span style={{ color: "#444", fontSize: "14px", lineHeight: 1.5 }}>{b}</span>
+                    <span style={{ color: "#6DBE45", fontWeight: 900, fontSize: "18px", flexShrink: 0 }}>✓</span>
+                    <span style={{ color: "#333", fontSize: "18px", lineHeight: 1.5 }}>{b}</span>
                   </li>
                 ))}
               </ul>
@@ -155,7 +155,7 @@ export function VacanciesSection() {
                 textAlign: "center",
               }}
             >
-              <p style={{ color: "#555", fontSize: "14px", lineHeight: 1.7, marginBottom: "20px" }}>
+              <p style={{ color: "#3F3F3F", fontSize: "18px", lineHeight: 1.7, marginBottom: "20px" }}>
                 Для отклика на вакансию позвоните нам или напишите на email
               </p>
               <a
@@ -170,7 +170,7 @@ export function VacanciesSection() {
                   color: "#fff",
                   padding: "14px 24px",
                   borderRadius: "12px",
-                  fontSize: "15px",
+                  fontSize: "17px",
                   fontWeight: 800,
                   textDecoration: "none",
                   marginBottom: "12px",
@@ -192,7 +192,7 @@ export function VacanciesSection() {
                   color: "#6DBE45",
                   padding: "14px 24px",
                   borderRadius: "12px",
-                  fontSize: "15px",
+                  fontSize: "17px",
                   fontWeight: 700,
                   border: "2px solid #6DBE45",
                   cursor: "pointer",
