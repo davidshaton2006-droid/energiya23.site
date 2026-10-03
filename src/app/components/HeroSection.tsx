@@ -71,7 +71,7 @@ export function HeroSection() {
             }}
           />
           {/* Floating badge top-right */}
-          <div
+          <div className="anim-float"
             style={{
               position: "absolute",
               top: "28px",
@@ -87,7 +87,7 @@ export function HeroSection() {
             <div style={{ color: "rgba(255,255,255,0.9)", fontSize: "15px", fontWeight: 600, marginTop: "2px" }}>год основания</div>
           </div>
           {/* Floating badge bottom-left */}
-          <div
+          <div className="anim-float-b"
             style={{
               position: "absolute",
               bottom: "28px",
@@ -180,7 +180,7 @@ export function HeroSection() {
             <div style={{ color: "#4A4A4A", fontSize: "17px", lineHeight: 1.5, marginBottom: "14px" }}>
               Оставьте имя и телефон, менеджер свяжется с вами в течение рабочего дня.
             </div>
-            <LeadFormCompact source="hero" buttonText="Рассчитать" />
+            <LeadFormCompact source="hero" buttonText="Рассчитать" pulse />
           </div>
 
           {/* Tags row */}

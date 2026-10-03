@@ -43,7 +43,7 @@ const css = `
 `;
 
 /** Короткая форма: имя + телефон + кнопка. Используется в первом экране и в оффере. */
-export function LeadFormCompact({ source, buttonText = "Рассчитать" }: { source: string; buttonText?: string }) {
+export function LeadFormCompact({ source, buttonText = "Рассчитать", pulse = false }: { source: string; buttonText?: string; pulse?: boolean }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [website, setWebsite] = useState(""); // honeypot от ботов
@@ -127,7 +127,7 @@ export function LeadFormCompact({ source, buttonText = "Рассчитать" }:
           Не удалось отправить заявку. Попробуйте ещё раз или позвоните: +7 (960) 493-33-56.
         </div>
       )}
-      <button type="submit" className="lf-btn" disabled={status === "sending"}>
+      <button type="submit" className={pulse ? "lf-btn pulse" : "lf-btn"} disabled={status === "sending"}>
         {status === "sending" ? "Отправляем…" : buttonText}
       </button>
       <p className="lf-note">

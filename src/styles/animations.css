@@ -1,0 +1,41 @@
+/* Лёгкие анимации сайта. Только transform и opacity (работают на GPU, не вызывают перерасчёт вёрстки). */
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+/* Появление блоков при прокрутке (классы ставит src/app/lib/reveal.ts) */
+.rv { opacity: 0; transform: translate3d(0, 22px, 0); }
+.rv-in {
+  animation: rvIn 0.65s cubic-bezier(0.22, 0.7, 0.2, 1) both;
+  animation-delay: var(--rv-d, 0ms);
+  will-change: transform, opacity;
+}
+@keyframes rvIn {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Первый экран: бейджи мягко «парят», кнопка формы слегка пульсирует */
+.anim-float   { animation: floatY 5s ease-in-out infinite; }
+.anim-float-b { animation: floatY 6s ease-in-out -2s infinite; }
+@keyframes floatY {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -6px, 0); }
+}
+
+.lf-btn.pulse { animation: lfPulse 3.2s ease-in-out 1.5s infinite; }
+@keyframes lfPulse {
+  0%, 72%, 100% { box-shadow: 0 4px 16px rgba(232, 119, 34, 0.32), 0 0 0 0 rgba(232, 119, 34, 0); }
+  78%           { box-shadow: 0 4px 16px rgba(232, 119, 34, 0.32), 0 0 0 0 rgba(232, 119, 34, 0.45); }
+  92%           { box-shadow: 0 4px 16px rgba(232, 119, 34, 0.32), 0 0 0 12px rgba(232, 119, 34, 0); }
+}
+
+
+/* Нажатие кнопок: мгновенный отклик на сенсорных экранах */
+.lf-btn:active { transform: scale(0.98); }
+
+/* Уважаем системную настройку «уменьшить движение» */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rv { opacity: 1 !important; transform: none !important; }
+  .rv-in, .anim-float, .anim-float-b, .lf-btn.pulse { animation: none !important; }
+}

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { initReveal } from "./lib/reveal";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { ForWhoSection } from "./components/ForWhoSection";
@@ -15,6 +17,12 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 
 export default function App() {
+  useEffect(() => {
+    let cleanup = () => {};
+    const timer = window.setTimeout(() => { cleanup = initReveal(); }, 60);
+    return () => { window.clearTimeout(timer); cleanup(); };
+  }, []);
+
   return (
     <div style={{ fontFamily: "Montserrat, sans-serif", backgroundColor: "#FFFFFF" }}>
       <Header />
