@@ -399,6 +399,22 @@ export function HeroSection() {
           .hero-phone-short { display: none !important; }
           .hero-phone-full { display: inline !important; }
         }
+
+        /* Wide screens: text + form on the left, photo on the right, so the form is visible in the first screen */
+        @media (min-width: 1024px) {
+          .hero-grid {
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 48px !important;
+            min-height: auto !important;
+            padding-top: 32px !important;
+            padding-bottom: 72px !important;
+          }
+          .hero-content { order: 1; flex: 1 1 54%; min-width: 0; gap: 14px !important; }
+          .hero-content h1 { font-size: clamp(30px, 3.1vw, 44px) !important; }
+          .hero-content > p { font-size: 15px !important; line-height: 1.55 !important; }
+          .hero-photo { order: 2; flex: 0 0 42%; width: auto !important; height: 640px !important; }
+        }
       `}</style>
     </section>
   );
