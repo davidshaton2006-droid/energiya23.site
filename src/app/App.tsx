@@ -6,6 +6,7 @@ import { MissionSection } from "./components/MissionSection";
 import { ProductsSection } from "./components/ProductsSection";
 import { WarehouseSection } from "./components/WarehouseSection";
 import { ServicesSection } from "./components/ServicesSection";
+import { OfferSection } from "./components/OfferSection";
 import { AboutSection } from "./components/AboutSection";
 import { PriceSection } from "./components/PriceSection";
 import { GalleryReviews } from "./components/GalleryReviews";
@@ -25,6 +26,7 @@ export default function App() {
         <ProductsSection />
         <WarehouseSection />
         <ServicesSection />
+        <OfferSection />
         <AboutSection />
         <PriceSection />
         <GalleryReviews />

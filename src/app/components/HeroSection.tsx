@@ -1,5 +1,5 @@
 import { Phone, ChevronDown } from "lucide-react";
-import heroImg from "../../imports/WhatsApp_Image_2026-04-24_at_00.44.36.jpeg";
+import { LeadFormCompact } from "./LeadForm";
 
 export function HeroSection() {
   const scrollToContact = () => {
@@ -46,7 +46,13 @@ export function HeroSection() {
           }}
         >
           <img
-            src={heroImg}
+            src="/img/hero-1280.webp"
+            srcSet="/img/hero-640.webp 640w, /img/hero-1280.webp 1280w"
+            sizes="(max-width: 700px) 100vw, 1232px"
+            width={1280}
+            height={535}
+            decoding="async"
+            fetchpriority="high"
             alt="Производство металлоконструкций"
             style={{
               width: "100%",
@@ -154,6 +160,28 @@ export function HeroSection() {
             ангаров и промышленных зданий. Государственные и коммерческие B2B-заказы.
             Точное изготовление по проектной документации, стабильные сроки, доставка по всей России.
           </p>
+
+          {/* Lead form */}
+          <div
+            style={{
+              backgroundColor: "#fff",
+              border: "1.5px solid rgba(109,190,69,0.45)",
+              borderRadius: "20px",
+              padding: "20px",
+              boxShadow: "0 8px 28px rgba(0,0,0,0.07)",
+              maxWidth: "560px",
+              width: "100%",
+              boxSizing: "border-box",
+            }}
+          >
+            <div style={{ color: "#222", fontSize: "17px", fontWeight: 900, lineHeight: 1.3, marginBottom: "4px" }}>
+              Рассчитаем стоимость по вашим чертежам
+            </div>
+            <div style={{ color: "#666", fontSize: "13px", lineHeight: 1.5, marginBottom: "14px" }}>
+              Оставьте имя и телефон, менеджер свяжется с вами в течение рабочего дня.
+            </div>
+            <LeadFormCompact source="hero" buttonText="Рассчитать" />
+          </div>
 
           {/* Tags row */}
           <div className="hero-tags" style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
@@ -339,7 +367,7 @@ export function HeroSection() {
             gap: 18px !important;
           }
           .hero-photo {
-            height: 260px !important;
+            height: 200px !important;
             border-radius: 20px !important;
           }
           /* CTA buttons: stack vertically, full width */

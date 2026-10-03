@@ -118,7 +118,7 @@ export function Footer() {
                       color: "#999",
                       fontSize: "13px",
                       fontFamily: "Montserrat, sans-serif",
-                      padding: 0,
+                      padding: "6px 0",
                       textAlign: "left",
                       transition: "color 0.2s",
                     }}
@@ -150,7 +150,7 @@ export function Footer() {
                 ["Доставка по России", "/dostavka-metallokonstrukcij/"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <a href={href} style={{ color: "#999", fontSize: "13px", textDecoration: "none" }}>{label}</a>
+                  <a href={href} style={{ color: "#999", fontSize: "13px", textDecoration: "none", display: "inline-block", padding: "4px 0" }}>{label}</a>
                 </li>
               ))}
             </ul>

@@ -11,8 +11,7 @@ const metalItems = [
   "Арматура и вспомогательный прокат",
 ];
 
-const warehouseImg =
-  "https://images.unsplash.com/photo-1748946469976-d0f86878128c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMHdhcmVob3VzZSUyMHN0b3JhZ2UlMjBzdGVlbCUyMHJvbGxzJTIwaW5kdXN0cmlhbHxlbnwxfHx8fDE3NzE0NTg2ODV8MA&ixlib=rb-4.1.0&q=80&w=1080";
+const warehouseImg = "/img/sklad-metalloprokata.webp";
 
 export function WarehouseSection() {
   return (
@@ -73,6 +72,10 @@ export function WarehouseSection() {
           >
             <img
               src={warehouseImg}
+              width={1100}
+              height={490}
+              loading="lazy"
+              decoding="async"
               alt="Склад металлопроката"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />

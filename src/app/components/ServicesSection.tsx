@@ -1,5 +1,5 @@
 import { Zap, Flame, Scissors, Drill, Wrench, Truck, Shield, Wind, PaintBucket, Award, Scale, Map, Calculator, PenTool, CheckCircle, Check } from "lucide-react";
-import protectionImg from "../../imports/WhatsApp_Image_2026-04-19_at_19.53.52.jpeg";
+const protectionImg = "/img/protection.webp";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const services = [
@@ -238,6 +238,8 @@ export function ServicesSection() {
             }}>
               <ImageWithFallback
                 src={protectionImg}
+                loading="lazy"
+                decoding="async"
                 alt="Спецобработка конструкций"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

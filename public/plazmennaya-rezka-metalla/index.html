@@ -84,7 +84,7 @@
         <h1>Плазменная резка металла</h1>
         <p class="lead">ООО ЭНЕРГИЯ выполняет плазменную резку листового проката толщиной до 40 мм. Метод отличается высокой скоростью раскроя и подходит для серийного производства. Стоимость — от 15 р/кг. Производство находится в Краснодаре, готовые детали доставляем по всей России собственным транспортом.</p>
         <div class="price"><b>от 15 р/кг</b><small>Толщина реза до 40 мм</small><a class="btn" href="#order">Рассчитать стоимость</a></div>
-        <div class="photos"><img src="/img/detali-iz-trub.jpg" alt="Готовые детали из металла на производстве ООО ЭНЕРГИЯ" width="750" height="1000" /></div>
+        <div class="photos"><img src="/img/detali-iz-trub.webp" alt="Готовые детали из металла на производстве ООО ЭНЕРГИЯ" width="750" height="1000" /></div>
         <h2>Возможности плазменной резки</h2><ul><li>Толщина реза — до 40 мм</li><li>Высокая скорость раскроя</li><li>Подходит для серийного производства</li><li>Работа с листовым прокатом</li></ul>
         <h2>Для чего применяют</h2><p>Плазменная резка эффективна, когда нужно быстро раскроить лист большой толщины: заготовки для металлоконструкций, опорные плиты, пластины и другие детали. Если нужна максимальная точность контура, подскажем, в каких случаях лучше лазерная резка.</p>
         <h2>Стоимость</h2><p>Плазменная резка металла — от 15 р/кг, толщина реза до 40 мм. Итоговая цена зависит от объёма и количества деталей, считаем по вашим чертежам.</p>
@@ -137,7 +137,7 @@
           fetch("https://energiya23-leads.romantik-baza.workers.dev", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: name, phone: phone, comment: comment, website: f.website.value })
+            body: JSON.stringify({ name: name, phone: phone, comment: comment, website: f.website.value, source: location.pathname.split("/").join("") })
           }).then(function (r) {
             if (!r.ok) throw new Error("send");
             if (window.ym) ym(113330393, "reachGoal", "lead");

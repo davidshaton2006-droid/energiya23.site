@@ -2,20 +2,20 @@ import { Star } from "lucide-react";
 
 const galleryImages = [
   {
-    url: "https://images.unsplash.com/photo-1771337742731-91a885ccfc5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGJlYW0lMjBtZXRhbCUyMHN0cnVjdHVyZSUyMGluZHVzdHJpYWx8ZW58MXx8fHwxNzcxNDU4NjgyfDA&ixlib=rb-4.1.0&q=80&w=600",
+    url: "/img/svarka-balki.webp",
     label: "Несущие металлоконструкции",
   },
   {
-    url: "https://images.unsplash.com/photo-1637166247109-f231767074b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwaGFuZ2FyJTIwc3RlZWwlMjBmcmFtZSUyMHVuZGVyJTIwY29uc3RydWN0aW9ufGVufDF8fHx8MTc3MTQ1ODY4Nnww&ixlib=rb-4.1.0&q=80&w=600",
+    url: "/img/arochnye-karkasy.webp",
     label: "Ангарные конструкции",
   },
   {
-    url: "https://images.unsplash.com/photo-1737697103377-bb1d8431d5e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjB3b3JrZXJzJTIwd2VsZGluZyUyMG1ldGFsJTIwZnJhbWUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NzE0NTg2ODZ8MA&ixlib=rb-4.1.0&q=80&w=600",
+    url: "/img/svarka-konstrukcii.webp",
     label: "Сварка и сборка узлов",
   },
   {
-    url: "https://images.unsplash.com/photo-1738162837438-92ff852619a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXNlciUyMGN1dHRpbmclMjBtZXRhbCUyMHdvcmtzaG9wJTIwQ05DJTIwbWFjaGluZXxlbnwxfHx8fDE3NzE0NTg2ODN8MA&ixlib=rb-4.1.0&q=80&w=600",
-    label: "Лазерная резка металла",
+    url: "/img/lentochnaya-pila.webp",
+    label: "Ленточнопильный раскрой металла",
   },
 ];
 
@@ -108,7 +108,7 @@ export function GalleryReviews() {
                   el.style.boxShadow = "0 4px 16px rgba(0,0,0,0.10)";
                 }}
               >
-                <img src={img.url} alt={img.label} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <img src={img.url} alt={img.label} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 <div
                   style={{
                     position: "absolute",

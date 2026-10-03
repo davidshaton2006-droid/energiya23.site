@@ -84,7 +84,7 @@
         <h1>Изготовление металлоконструкций для ангаров</h1>
         <p class="lead">ООО ЭНЕРГИЯ производит детали для ангарных конструкций любых типов: арочных, каркасных и модульных. Детали поступают маркированными и готовыми к монтажу. Работаем по проектной документации КМ и КМД и по ТУ заказчика. Цена — от 20 р/кг за работу без стоимости материала, гарантия 3 года, производство от 10 дней, доставка по всей России собственным транспортом.</p>
         <div class="price"><b>от 20 р/кг</b><small>Цена за работу, без стоимости материала</small><a class="btn" href="#order">Рассчитать стоимость</a></div>
-        <div class="photos"><img src="/img/arochnye-karkasy.jpg" alt="Изготовленные металлические каркасы арочных конструкций" width="750" height="1000" /><img src="/img/arochnye-elementy.jpg" alt="Арочные элементы металлоконструкций на производстве" width="750" height="1000" loading="lazy" /><img src="/img/sborka-arochnogo-elementa.jpg" alt="Сборка арочного элемента металлоконструкции" width="719" height="1000" loading="lazy" /></div>
+        <div class="photos"><img src="/img/arochnye-karkasy.webp" alt="Изготовленные металлические каркасы арочных конструкций" width="750" height="1000" /><img src="/img/arochnye-elementy.webp" alt="Арочные элементы металлоконструкций на производстве" width="750" height="1000" loading="lazy" /><img src="/img/sborka-arochnogo-elementa.webp" alt="Сборка арочного элемента металлоконструкции" width="719" height="1000" loading="lazy" /></div>
         <h2>Что входит в изготовление деталей для ангаров</h2><ul><li>Каркасные элементы ангарных конструкций</li><li>Рёбра жёсткости и усилительные вставки</li><li>Опорные плиты и башмаки</li><li>Доборные элементы и нестандартные детали по ТУ</li></ul>
         <h2>Типы ангарных конструкций</h2><p>Мы производим детали для арочных, каркасных и модульных ангарных конструкций. Контрольная сборка узлов перед отгрузкой и маркировка по монтажной схеме позволяют смонтировать конструкцию на объекте без доработок.</p>
         <h2>Стоимость</h2><p>Изготовление деталей металлоконструкций для складов и ангаров (простые конструкции) — от 20 р/кг. Цена указана за работу, без стоимости материала. Условия и цена фиксируются в договоре.</p>
@@ -137,7 +137,7 @@
           fetch("https://energiya23-leads.romantik-baza.workers.dev", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: name, phone: phone, comment: comment, website: f.website.value })
+            body: JSON.stringify({ name: name, phone: phone, comment: comment, website: f.website.value, source: location.pathname.split("/").join("") })
           }).then(function (r) {
             if (!r.ok) throw new Error("send");
             if (window.ym) ym(113330393, "reachGoal", "lead");

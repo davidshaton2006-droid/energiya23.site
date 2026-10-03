@@ -65,7 +65,7 @@ function LeadForm() {
       const response = await fetch(LEADS_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, comment, website }),
+        body: JSON.stringify({ name, phone, comment, website, source: "contacts" }),
       });
       if (!response.ok) throw new Error("Ошибка отправки");
       setStatus("success");
@@ -586,6 +586,7 @@ export function ContactSection() {
             }}
           >
             <iframe
+              loading="lazy"
               src="https://yandex.ru/map-widget/v1/?mode=search&text=%D0%B3.%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80,%20%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5%20%D1%88%D0%BE%D1%81%D1%81%D0%B5,%2014/2&z=16"
               width="100%"
               height="380"

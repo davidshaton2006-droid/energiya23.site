@@ -1,7 +1,6 @@
 import { Shield, Truck, CheckCircle } from "lucide-react";
 
-const productionImg =
-  "https://images.unsplash.com/photo-1759159091728-e2c87b9d9315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZXRhbCUyMGZhYnJpY2F0aW9uJTIwZmFjdG9yeSUyMHByb2R1Y3Rpb24lMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzcxNDU4NjgyfDA&ixlib=rb-4.1.0&q=80&w=1080";
+const productionImg = "/img/proizvodstvennyj-ceh.webp";
 
 const equipment = [
   "ЧПУ-станки — исключают ошибки ручной разметки",
@@ -96,6 +95,10 @@ export function AboutSection() {
           >
             <img
               src={productionImg}
+              width={884}
+              height={1000}
+              loading="lazy"
+              decoding="async"
               alt="Производство металлоконструкций"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />

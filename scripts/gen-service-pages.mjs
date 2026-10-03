@@ -335,7 +335,7 @@ const FORM_JS = `
           fetch("${WORKER}", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: name, phone: phone, comment: comment, website: f.website.value })
+            body: JSON.stringify({ name: name, phone: phone, comment: comment, website: f.website.value, source: location.pathname.split("/").join("") })
           }).then(function (r) {
             if (!r.ok) throw new Error("send");
             if (window.ym) ym(113330393, "reachGoal", "lead");
@@ -385,7 +385,7 @@ function render(p) {
 
   const photos = p.images.length
     ? `<div class="photos">${p.images
-        .map(([f, alt], i) => `<img src="/img/${f}.jpg" alt="${esc(alt)}" width="${IMG[f][0]}" height="${IMG[f][1]}"${i ? ' loading="lazy"' : ""} />`)
+        .map(([f, alt], i) => `<img src="/img/${f}.webp" alt="${esc(alt)}" width="${IMG[f][0]}" height="${IMG[f][1]}"${i ? ' loading="lazy"' : ""} />`)
         .join("")}</div>`
     : "";
 

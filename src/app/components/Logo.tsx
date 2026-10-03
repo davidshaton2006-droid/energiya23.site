@@ -1,10 +1,13 @@
-import logoImg from "../../../assets/be197c6a3ba296048ba52adad99c5b3499e0aa52.png";
+const logoImg = "/img/logo.webp";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       <img
         src={logoImg}
+        width={56}
+        height={84}
+        decoding="async"
         alt="Завод ЭНЕРГИЯ логотип"
         style={{ width: "56px", height: "56px", objectFit: "contain", flexShrink: 0 }}
       />

@@ -84,7 +84,7 @@
         <h1>Ленточнопильный раскрой металла</h1>
         <p class="lead">ООО ЭНЕРГИЯ выполняет ленточнопильный раскрой длинномерного и профильного металлопроката. Ширина реза — до 420 мм, профиль любого сечения, высокая точность размеров заготовок. Стоимость — от 12 р/кг. Производство в Краснодаре, доставка по всей России собственным транспортом.</p>
         <div class="price"><b>от 12 р/кг</b><small>Ширина реза до 420 мм</small><a class="btn" href="#order">Рассчитать стоимость</a></div>
-        <div class="photos"><img src="/img/lentochnaya-pila.jpg" alt="Ленточная пила для раскроя металла на производстве ООО ЭНЕРГИЯ" width="750" height="1000" /><img src="/img/lentochnaya-pila-raskroj.jpg" alt="Раскрой металла на ленточной пиле" width="714" height="1000" loading="lazy" /></div>
+        <div class="photos"><img src="/img/lentochnaya-pila.webp" alt="Ленточная пила для раскроя металла на производстве ООО ЭНЕРГИЯ" width="750" height="1000" /><img src="/img/lentochnaya-pila-raskroj.webp" alt="Раскрой металла на ленточной пиле" width="714" height="1000" loading="lazy" /></div>
         <h2>Что можно раскроить</h2><ul><li>Длинномерный металлопрокат</li><li>Профильный прокат</li><li>Профиль любого сечения</li><li>Заготовки с высокой точностью размеров</li></ul>
         <h2>Раскрой в составе заказа</h2><p>Ленточнопильный раскрой часто выполняется как первый этап изготовления металлоконструкций. Собственный склад металлопроката (двутавровая балка, швеллер, уголок, лист, профильная труба, круг, полоса, арматура) позволяет начать работу без задержек на закупку.</p>
         <h2>Стоимость</h2><p>Ленточнопильный раскрой металла — от 12 р/кг, ширина реза до 420 мм. Итоговая цена зависит от объёма и количества резов, считаем по вашей спецификации.</p>
@@ -137,7 +137,7 @@
           fetch("https://energiya23-leads.romantik-baza.workers.dev", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: name, phone: phone, comment: comment, website: f.website.value })
+            body: JSON.stringify({ name: name, phone: phone, comment: comment, website: f.website.value, source: location.pathname.split("/").join("") })
           }).then(function (r) {
             if (!r.ok) throw new Error("send");
             if (window.ym) ym(113330393, "reachGoal", "lead");
