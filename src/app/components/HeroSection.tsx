@@ -8,7 +8,7 @@ const HERO_DEFAULT = {
   term: "Сроки от 10 дней",
   chips: ["🛡️ Гарантия 3 года", "📄 Фиксированная цена", "🚛 Доставка по России"],
   formTitle: "Рассчитаем стоимость по вашим чертежам",
-  formSub: "Оставьте имя и телефон, менеджер свяжется с вами в течение рабочего дня.",
+  formSub: "Оставьте номер телефона, менеджер перезвонит вам в течение рабочего дня.",
   stats: [
     { value: "2014", label: "год основания" },
     { value: "10+", label: "лет опыта" },
@@ -203,7 +203,7 @@ export function HeroSection({ c = {} }: { c?: Partial<typeof HERO_DEFAULT> }) {
             <div style={{ color: "#4A4A4A", fontSize: "17px", lineHeight: 1.5, marginBottom: "14px" }}>
               {H.formSub}
             </div>
-            <LeadFormCompact source={H.source} buttonText="Рассчитать" pulse />
+            <LeadFormCompact source={H.source} buttonText="Рассчитать" pulse phoneOnly />
           </div>
 
           {/* Tags row */}

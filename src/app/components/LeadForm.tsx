@@ -8,12 +8,20 @@ type LeadPayload = { name: string; phone: string; comment?: string; website?: st
 
 /** Отправка заявки в Worker (→ Telegram) и цель «lead» в Яндекс Метрике. */
 export async function sendLead(p: LeadPayload) {
-  const response = await fetch(LEADS_ENDPOINT, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(p),
-  });
-  if (!response.ok) throw new Error("Ошибка отправки");
+  let response: Response;
+  try {
+    response = await fetch(LEADS_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(p),
+    });
+    if (!response.ok) throw new Error("Ошибка отправки");
+  } catch (err) {
+    // Фиксируем неудачную отправку в Метрике (цель «lead_error»), чтобы потерянные заявки были видны
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).ym?.(113330393, "reachGoal", "lead_error", { source: p.source });
+    throw err;
+  }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).ym?.(113330393, "reachGoal", "lead", { source: p.source });
 }
@@ -43,7 +51,7 @@ const css = `
 `;
 
 /** Короткая форма: имя + телефон + кнопка. Используется в первом экране и в оффере. */
-export function LeadFormCompact({ source, buttonText = "Рассчитать", pulse = false }: { source: string; buttonText?: string; pulse?: boolean }) {
+export function LeadFormCompact({ source, buttonText = "Рассчитать", pulse = false, phoneOnly = false }: { source: string; buttonText?: string; pulse?: boolean; phoneOnly?: boolean }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [website, setWebsite] = useState(""); // honeypot от ботов
@@ -53,14 +61,14 @@ export function LeadFormCompact({ source, buttonText = "Рассчитать", p
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const next: { name?: string; phone?: string } = {};
-    if (!name.trim()) next.name = "Укажите имя";
+    if (!phoneOnly && !name.trim()) next.name = "Укажите имя";
     if (digitsCount(phone) < 10) next.phone = "Введите корректный номер телефона";
     setErrors(next);
     if (next.name || next.phone) return;
 
     setStatus("sending");
     try {
-      await sendLead({ name, phone, website, source });
+      await sendLead({ name: phoneOnly ? "" : name, phone, website, source });
       setStatus("success");
       setName("");
       setPhone("");
@@ -82,6 +90,7 @@ export function LeadFormCompact({ source, buttonText = "Рассчитать", p
     <form className="lf" onSubmit={handleSubmit} noValidate>
       <style>{css}</style>
       <div className="lf-fields">
+        {!phoneOnly && (
         <div>
           <input
             type="text"
@@ -96,6 +105,7 @@ export function LeadFormCompact({ source, buttonText = "Рассчитать", p
           />
           {errors.name && <div className="lf-err">{errors.name}</div>}
         </div>
+        )}
         <div>
           <input
             type="tel"
@@ -124,7 +134,7 @@ export function LeadFormCompact({ source, buttonText = "Рассчитать", p
       />
       {status === "error" && (
         <div className="lf-alert" role="alert">
-          Не удалось отправить заявку. Попробуйте ещё раз или позвоните: +7 (960) 493-33-56.
+          Не удалось отправить заявку. Попробуйте ещё раз или позвоните: <a href="tel:+79604933356" style={{ color: "#B3261E", fontWeight: 700 }}>+7 (960) 493-33-56</a>.
         </div>
       )}
       <button type="submit" className={pulse ? "lf-btn pulse" : "lf-btn"} disabled={status === "sending"}>
