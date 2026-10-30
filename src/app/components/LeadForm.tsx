@@ -28,7 +28,7 @@ export async function sendLead(p: LeadPayload) {
 
 const css = `
 .lf { display: flex; flex-direction: column; gap: 10px; font-family: Montserrat, sans-serif; }
-.lf-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.lf-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr)); gap: 10px; }
 .lf input[type="text"], .lf input[type="tel"] {
   width: 100%; box-sizing: border-box; min-height: 52px; padding: 0 16px; border-radius: 12px;
   border: 1.5px solid #E0E0E0; background: #fff; color: #222; font-size: 16px; font-family: inherit; outline: none;

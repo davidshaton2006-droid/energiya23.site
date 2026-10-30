@@ -81,7 +81,7 @@ export function GalleryReviews({ c = {}, showReviews = true }: { c?: any; showRe
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(260px, 100%), 1fr))",
               gap: "20px",
             }}
           >
@@ -170,7 +170,7 @@ export function GalleryReviews({ c = {}, showReviews = true }: { c?: any; showRe
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
               gap: "24px",
             }}
           >

@@ -70,7 +70,7 @@ export const PAGES = [
           chips: ["🛡️ Гарантия 3 года", "📄 Цена по договору", "🚛 Доставка по России"],
           formTitle: "Рассчитаем металлоконструкции для вашего склада",
           stats: [{ value: "от 20 р/кг", label: "стоимость работы" }, ...STATS_BASE.slice(1)],
-          photo: photo("proizvodstvennyj-ceh", "Производственный цех ООО ЭНЕРГИЯ в Краснодаре"),
+          first: ["karkas-logistika", "sklad-prokata", "karkas-mtf"],
         },
       },
       {
@@ -188,7 +188,7 @@ export const PAGES = [
           chips: ["🛡️ Гарантия 3 года", "📄 Цена по договору", "🚛 Доставка по России"],
           formTitle: "Рассчитаем конструкции для вашего ангара",
           stats: [{ value: "от 20 р/кг", label: "стоимость работы" }, ...STATS_BASE.slice(1)],
-          photo: photo("arochnye-karkasy", "Изготовленные металлические каркасы арочных конструкций"),
+          first: ["arochnyj-karkas", "arochnye-ceh", "fasad-konstrukcii"],
         },
       },
       {
@@ -304,7 +304,7 @@ export const PAGES = [
           chips: ["🛡️ Гарантия 3 года", "📄 Цена по договору", "🚛 Доставка по России"],
           formTitle: "Рассчитаем конструкции для вашего объекта",
           stats: [{ value: "от 36 р/кг", label: "сложные узлы" }, ...STATS_BASE.slice(1)],
-          photo: photo("svarka-konstrukcii", "Сварка металлоконструкции на производстве ООО ЭНЕРГИЯ"),
+          first: ["karkas-montazh", "svarka-balki", "karkas-ploshchadka"],
         },
       },
       {
@@ -408,7 +408,7 @@ export const PAGES = [
           chips: ["🎯 Точность по чертежу", "📄 Цена по договору", "🚛 Доставка по России"],
           formTitle: "Рассчитаем лазерную резку по вашим чертежам",
           stats: [{ value: "от 15 р/кг", label: "лазерная резка" }, { value: "ЧПУ", label: "управление станками" }, ...STATS_BASE.slice(2)],
-          photo: photo("proizvodstvennyj-ceh", "Производственный цех ООО ЭНЕРГИЯ в Краснодаре"),
+          first: ["rezka-lista", "ceh", "svarka-dugi"],
         },
       },
       {
@@ -503,7 +503,7 @@ export const PAGES = [
           chips: ["⚡ Высокая скорость", "📄 Цена по договору", "🚛 Доставка по России"],
           formTitle: "Рассчитаем плазменную резку",
           stats: [{ value: "до 40 мм", label: "толщина реза" }, { value: "от 15 р/кг", label: "плазменная резка" }, ...STATS_BASE.slice(2)],
-          photo: photo("detali-iz-trub", "Готовые детали из металла на производстве ООО ЭНЕРГИЯ"),
+          first: ["zagotovki-trub", "rezka-lista", "svarka-balki"],
         },
       },
       {
@@ -596,7 +596,7 @@ export const PAGES = [
           chips: ["📏 Точные заготовки", "📄 Цена по договору", "🚛 Доставка по России"],
           formTitle: "Рассчитаем раскрой металла",
           stats: [{ value: "до 420 мм", label: "ширина реза" }, { value: "от 12 р/кг", label: "раскрой" }, ...STATS_BASE.slice(2)],
-          photo: photo("lentochnaya-pila", "Ленточная пила для раскроя металла на производстве ООО ЭНЕРГИЯ"),
+          first: ["lentochnaya-pila", "sklad-prokata", "pila-krupno"],
         },
       },
       {
@@ -686,7 +686,7 @@ export const PAGES = [
           chips: ["📐 СНиП и ГОСТ", "📄 Цена по договору", "🏭 Сразу в производство"],
           formTitle: "Рассчитаем проектирование КМ и КМД",
           stats: [{ value: "КМ и КМД", label: "марки документации" }, ...STATS_BASE.slice(0, 1), ...STATS_BASE.slice(2, 4)],
-          photo: photo("sborka-arochnogo-elementa", "Сборка металлического элемента по документации"),
+          first: ["karkas-logistika", "arochnyj-karkas", "karkas-montazh"],
         },
       },
       {
@@ -779,7 +779,7 @@ export const PAGES = [
           chips: ["✅ Сертифицированные составы", "📄 Работаем с НДС", "🌍 По всей России"],
           formTitle: "Рассчитаем огнезащиту вашего объекта",
           stats: [{ value: "МЧС", label: "сдача работ под ключ" }, { value: "ГОСТ", label: "соответствие стандартам" }, ...STATS_BASE.slice(0, 1), { value: "Россия", label: "выходим на объект" }],
-          photo: { src: "/img/hero-1280.webp", srcSet: "/img/hero-640.webp 640w, /img/hero-1280.webp 1280w", w: 1280, h: 535, alt: "Металлопрокат и конструкции на производстве ООО ЭНЕРГИЯ" },
+          first: ["pokrytie-zashchita", "okraska-balok", "kompressor"],
         },
       },
       {
@@ -866,7 +866,7 @@ export const PAGES = [
           chips: ["🚛 Собственный автопарк", "📦 Контроль погрузки", "🌍 Любая точка России"],
           formTitle: "Рассчитаем доставку на ваш объект",
           stats: [{ value: "1 млн+", label: "км доставок" }, { value: "Россия", label: "любая точка" }, ...STATS_BASE.slice(0, 1), STATS_BASE[2]],
-          photo: photo("gruzovik-dostavka", "Грузовик ООО ЭНЕРГИЯ у производственного цеха в Краснодаре"),
+          first: ["otgruzka", "logistika-krasnaya", "karkas-logistika"],
         },
       },
       {

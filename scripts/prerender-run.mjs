@@ -31,10 +31,11 @@ function jsonLd(obj) {
 }
 
 /** Подставляет в HTML-шаблон главной метаданные конкретной страницы услуги. */
-function applyHead(tpl, page, SITE) {
+function applyHead(tpl, page, SITE, SLIDES) {
   const url = `${SITE}/${page.slug}/`;
-  const hero = page.blocks.find((b) => b.id === "hero")?.c?.photo;
-  const jpg = hero && !hero.srcSet ? `${SITE}${hero.src.replace(".webp", ".jpg")}` : `${SITE}/og-image.jpg`;
+  const firstId = page.blocks.find((b) => b.id === "hero")?.c?.first?.[0];
+  const slide = SLIDES.find((x) => x.id === firstId);
+  const jpg = slide ? `${SITE}/img/slides/${slide.id}.jpg` : `${SITE}/og-image.jpg`;
   let h = tpl;
   const set = (re, to) => {
     if (!re.test(h)) console.warn("[prerender] не найден тег для замены:", re);
@@ -50,11 +51,9 @@ function applyHead(tpl, page, SITE) {
   set(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${attr(page.title)}" />`);
   set(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${attr(page.description)}" />`);
   set(/<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${jpg}" />`);
-  // предзагрузка фото первого экрана именно этой страницы
-  if (hero) {
-    const pre = hero.srcSet
-      ? `<link rel="preload" as="image" href="${hero.src}" imagesrcset="${hero.srcSet}" imagesizes="(max-width: 700px) 100vw, 1232px" fetchpriority="high" />`
-      : `<link rel="preload" as="image" href="${hero.src}" fetchpriority="high" />`;
+  // предзагрузка первого кадра галереи именно этой страницы
+  if (slide) {
+    const pre = `<link rel="preload" as="image" href="/img/slides/${slide.id}.webp" imagesrcset="/img/slides/${slide.id}-sm.webp ${slide.wSm}w, /img/slides/${slide.id}.webp ${slide.w}w" imagesizes="(max-width: 700px) 100vw, 640px" fetchpriority="high" />`;
     h = h.replace(/<link rel="preload" as="image"[^>]*\/>/, () => pre);
   }
 
@@ -104,6 +103,7 @@ async function main() {
   }
   const { default: puppeteer } = await import("puppeteer-core");
   const { PAGES, SITE } = await import(pathToFileURL(join(process.cwd(), "src/app/pages/pages.data.js")).href);
+  const { SLIDES } = await import(pathToFileURL(join(process.cwd(), "src/app/pages/slides.js")).href);
 
   const tpl = await readFile(join(DIST, "index.html"), "utf8");
 
@@ -141,7 +141,7 @@ async function main() {
 
   // Запись только после успешного рендера всех страниц
   for (const { path, def, html } of results) {
-    let out = def ? applyHead(tpl, def, SITE) : tpl;
+    let out = def ? applyHead(tpl, def, SITE, SLIDES) : tpl;
     const next = out.replace('<div id="root"></div>', () => `<div id="root">${html}</div>`);
     if (next === out) throw new Error(`${path}: не найден <div id="root"></div>`);
     const target = def ? join(DIST, def.slug, "index.html") : join(DIST, "index.html");

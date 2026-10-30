@@ -34,7 +34,7 @@ export function ProcessSection({ c = {} }: { c?: { badge?: string; titleBefore?:
           )}
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "24px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))", gap: "24px" }}>
           {steps.map((st, i) => (
             <div
               key={i}

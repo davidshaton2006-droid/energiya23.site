@@ -117,7 +117,7 @@ export function ServicesSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
             gap: "24px",
             marginBottom: "48px",
           }}
@@ -222,7 +222,7 @@ export function ServicesSection() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
               gap: "32px",
               marginBottom: "40px",
               alignItems: "start",
@@ -255,7 +255,7 @@ export function ServicesSection() {
               {/* Targets */}
               <div>
                 <h4 style={{ fontSize: "20px", fontWeight: 800, color: "#222", marginBottom: "16px" }}>Что мы обрабатываем:</h4>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "16px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(180px, 100%), 1fr))", gap: "16px" }}>
                   {protectionTargets.map((target, idx) => {
                     const TIcon = target.icon;
                     return (
@@ -296,7 +296,7 @@ export function ServicesSection() {
           {/* Steps */}
           <div style={{ backgroundColor: "#F9F9F9", borderRadius: "16px", padding: "24px", border: "1px solid #EBEBEB" }}>
             <h4 style={{ fontSize: "20px", fontWeight: 800, color: "#222", marginBottom: "20px", textAlign: "center" }}>Как мы работаем (4 простых шага)</h4>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "20px" }}>
                {protectionSteps.map((step, idx) => {
                  const SIcon = step.icon;
                  return (

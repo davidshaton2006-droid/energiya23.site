@@ -1,5 +1,7 @@
 import { Phone, ChevronDown } from "lucide-react";
 import { LeadFormCompact } from "./LeadForm";
+import { HeroSlider } from "./HeroSlider";
+import { orderSlides } from "../pages/slides.js";
 
 const HERO_DEFAULT = {
   badge: "Производство с 2014 года · Краснодар",
@@ -15,13 +17,7 @@ const HERO_DEFAULT = {
     { value: "90%", label: "клиентов возвращаются" },
     { value: "1 млн+", label: "км доставок" },
   ],
-  photo: {
-    src: "/img/hero-1280.webp",
-    srcSet: "/img/hero-640.webp 640w, /img/hero-1280.webp 1280w",
-    w: 1280,
-    h: 535,
-    alt: "Производство металлоконструкций",
-  },
+  first: [] as string[],
   source: "hero",
 };
 
@@ -66,38 +62,15 @@ export function HeroSection({ c = {} }: { c?: Partial<typeof HERO_DEFAULT> }) {
             position: "relative",
             overflow: "hidden",
             borderRadius: "32px",
-            height: "400px",
+            aspectRatio: "3 / 2",
             width: "100%",
           }}
         >
-          <img
-            src={H.photo.src}
-            srcSet={H.photo.srcSet}
-            sizes="(max-width: 700px) 100vw, 1232px"
-            width={H.photo.w}
-            height={H.photo.h}
-            decoding="async"
-            fetchpriority="high"
-            alt={H.photo.alt}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
-              display: "block",
-            }}
-          />
-          {/* Slight overlay for readability */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.15) 100%)",
-            }}
-          />
+          <HeroSlider slides={orderSlides(H.first)} interval={5000} />
           {/* Floating badge top-right */}
           <div className="anim-float"
             style={{
+              zIndex: 5,
               position: "absolute",
               top: "28px",
               right: "28px",
@@ -114,6 +87,7 @@ export function HeroSection({ c = {} }: { c?: Partial<typeof HERO_DEFAULT> }) {
           {/* Floating badge bottom-left */}
           <div className="anim-float-b"
             style={{
+              zIndex: 5,
               position: "absolute",
               bottom: "28px",
               left: "28px",
@@ -385,9 +359,12 @@ export function HeroSection({ c = {} }: { c?: Partial<typeof HERO_DEFAULT> }) {
             gap: 18px !important;
           }
           .hero-photo {
-            height: 200px !important;
+            height: auto !important;
+            aspect-ratio: 3 / 2;
             border-radius: 20px !important;
           }
+          /* На телефоне фото чистое: бейджи дублируют цифры ниже */
+          .anim-float, .anim-float-b { display: none !important; }
           /* CTA buttons: stack vertically, full width */
           .hero-cta-row {
             flex-direction: column !important;
@@ -428,10 +405,10 @@ export function HeroSection({ c = {} }: { c?: Partial<typeof HERO_DEFAULT> }) {
             padding-top: 32px !important;
             padding-bottom: 72px !important;
           }
-          .hero-content { order: 1; flex: 1 1 54%; min-width: 0; gap: 14px !important; }
+          .hero-content { order: 1; flex: 1 1 50%; min-width: 0; gap: 14px !important; }
           .hero-content h1 { font-size: clamp(30px, 3.1vw, 44px) !important; }
           .hero-content > p { font-size: 18px !important; line-height: 1.6 !important; }
-          .hero-photo { order: 2; flex: 0 0 42%; width: auto !important; height: 640px !important; }
+          .hero-photo { order: 2; flex: 0 0 50%; width: auto !important; height: auto !important; align-self: center; }
         }
       `}</style>
     </section>

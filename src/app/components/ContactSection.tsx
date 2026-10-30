@@ -276,7 +276,7 @@ export function ContactSection({ source = "contacts", showPartnership = true, c 
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: "32px" }}>
             {/* Benefits */}
             <div
               style={{
@@ -426,7 +426,7 @@ export function ContactSection({ source = "contacts", showPartnership = true, c 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "32px",
             }}
           >
