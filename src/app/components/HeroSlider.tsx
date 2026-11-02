@@ -1,6 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export type Slide = { id: string; caption: string; alt: string; w: number; h: number; wSm: number };
+export type Slide = {
+  id: string;
+  caption: string;
+  alt: string;
+  w: number;
+  h: number;
+  wSm: number;
+  kind?: "image" | "beforeAfter";
+  beforeSrc?: string;
+  afterSrc?: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+};
 
 const css = `
 .hs { position: absolute; inset: 0; overflow: hidden; background: #E9ECEF; touch-action: pan-y; user-select: none; }
@@ -8,6 +20,14 @@ const css = `
 .hs-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease; pointer-events: none; }
 .hs-slide.on { opacity: 1; z-index: 1; }
 .hs-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hs-comparison { display: grid; grid-template-columns: 1fr 1fr; width: 100%; height: 100%; gap: 3px; background: #fff; }
+.hs-comparison-part { position: relative; min-width: 0; overflow: hidden; background: #E9ECEF; }
+.hs-comparison-part img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hs-ba-label { position: absolute; top: 14px; left: 50%; z-index: 2; transform: translateX(-50%); padding: 7px 14px; border-radius: 10px;
+  color: #fff; font: 800 14px/1.3 Montserrat, sans-serif; letter-spacing: .06em; text-transform: uppercase; box-shadow: 0 2px 10px rgba(0,0,0,.22); }
+.hs-ba-label.before { background: #E87722; }
+.hs-ba-label.after { background: #6DBE45; }
+.hs-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .hs-cap { position: absolute; top: 14px; left: 14px; z-index: 3; max-width: calc(100% - 150px); padding: 7px 14px; border-radius: 10px;
   background: rgba(20,20,20,.62); color: #fff; font: 700 14px/1.3 Montserrat, sans-serif; backdrop-filter: blur(4px); }
 .hs-btn { position: absolute; top: 50%; z-index: 3; width: 44px; height: 44px; margin-top: -22px; border: 0; border-radius: 50%; cursor: pointer;
@@ -24,6 +44,8 @@ const css = `
   .hs-btn { width: 36px; height: 36px; margin-top: -18px; } .hs-btn svg { width: 18px; height: 18px; }
   .hs-btn.prev { left: 8px; } .hs-btn.next { right: 8px; }
   .hs-cap { top: 10px; left: 10px; font-size: 12px; padding: 5px 10px; max-width: calc(100% - 20px); }
+  .hs-ba-label { top: 10px; font-size: 11px; padding: 5px 10px; }
+  .hs-comparison { gap: 2px; }
   .hs-foot { padding: 0 8px 10px; }
 }
 @media (prefers-reduced-motion: reduce) { .hs-slide { transition: none; } }
@@ -93,21 +115,52 @@ export function HeroSlider({ slides, interval = 5000 }: { slides: Slide[]; inter
       {slides.map((s, i) =>
         near(i) ? (
           <div key={s.id} className={i === active ? "hs-slide on" : "hs-slide"} aria-hidden={i !== active}>
-            <img
-              src={`/img/slides/${s.id}.webp`}
-              srcSet={`/img/slides/${s.id}-sm.webp ${s.wSm}w, /img/slides/${s.id}.webp ${s.w}w`}
-              sizes="(max-width: 700px) 100vw, 640px"
-              width={s.w}
-              height={s.h}
-              alt={s.alt}
-              decoding="async"
-              {...(i === 0 ? { fetchpriority: "high" } : {})}
-            />
+            {s.kind === "beforeAfter" ? (
+              <div className="hs-comparison">
+                <div className="hs-comparison-part">
+                  <img
+                    src={s.beforeSrc}
+                    width={s.w}
+                    height={s.h}
+                    alt={s.beforeAlt}
+                    decoding="async"
+                    {...(i === 0 ? { fetchpriority: "high" } : {})}
+                  />
+                  <span className="hs-ba-label before">До</span>
+                </div>
+                <div className="hs-comparison-part">
+                  <img
+                    src={s.afterSrc}
+                    width={s.w}
+                    height={s.h}
+                    alt={s.afterAlt}
+                    decoding="async"
+                    {...(i === 0 ? { fetchpriority: "high" } : {})}
+                  />
+                  <span className="hs-ba-label after">После</span>
+                </div>
+              </div>
+            ) : (
+              <img
+                src={`/img/slides/${s.id}.webp`}
+                srcSet={`/img/slides/${s.id}-sm.webp ${s.wSm}w, /img/slides/${s.id}.webp ${s.w}w`}
+                sizes="(max-width: 700px) 100vw, 640px"
+                width={s.w}
+                height={s.h}
+                alt={s.alt}
+                decoding="async"
+                {...(i === 0 ? { fetchpriority: "high" } : {})}
+              />
+            )}
           </div>
         ) : null,
       )}
 
-      <div className="hs-cap" aria-live="polite">{slides[active].caption}</div>
+      {slides[active].kind === "beforeAfter" ? (
+        <div className="hs-status" aria-live="polite">{slides[active].caption}</div>
+      ) : (
+        <div className="hs-cap" aria-live="polite">{slides[active].caption}</div>
+      )}
 
       {n > 1 && (
         <>

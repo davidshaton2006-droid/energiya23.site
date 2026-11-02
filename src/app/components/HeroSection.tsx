@@ -66,7 +66,10 @@ export function HeroSection({ c = {} }: { c?: Partial<typeof HERO_DEFAULT> }) {
             width: "100%",
           }}
         >
-          <HeroSlider slides={orderSlides(H.first)} interval={5000} />
+          <HeroSlider
+            slides={orderSlides(H.first).filter((slide) => H.source === "hero" || slide.id !== "fasad-do-posle")}
+            interval={5000}
+          />
           {/* Floating badge top-right */}
           <div className="anim-float"
             style={{
