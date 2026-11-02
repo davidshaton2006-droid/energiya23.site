@@ -27,6 +27,7 @@ const css = `
   color: #fff; font: 800 14px/1.3 Montserrat, sans-serif; letter-spacing: .06em; text-transform: uppercase; box-shadow: 0 2px 10px rgba(0,0,0,.22); }
 .hs-ba-label.before { background: #E87722; }
 .hs-ba-label.after { background: #6DBE45; }
+.hs-comparison-part:last-child .hs-ba-label { left: 18px; transform: none; }
 .hs-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .hs-cap { position: absolute; top: 14px; left: 14px; z-index: 3; max-width: calc(100% - 150px); padding: 7px 14px; border-radius: 10px;
   background: rgba(20,20,20,.62); color: #fff; font: 700 14px/1.3 Montserrat, sans-serif; backdrop-filter: blur(4px); }
@@ -45,6 +46,7 @@ const css = `
   .hs-btn.prev { left: 8px; } .hs-btn.next { right: 8px; }
   .hs-cap { top: 10px; left: 10px; font-size: 12px; padding: 5px 10px; max-width: calc(100% - 20px); }
   .hs-ba-label { top: 10px; font-size: 11px; padding: 5px 10px; }
+  .hs-comparison-part:last-child .hs-ba-label { left: 10px; }
   .hs-comparison { gap: 2px; }
   .hs-foot { padding: 0 8px 10px; }
 }
