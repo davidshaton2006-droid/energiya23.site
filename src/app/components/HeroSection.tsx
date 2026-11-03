@@ -67,7 +67,7 @@ export function HeroSection({ c = {} }: { c?: Partial<typeof HERO_DEFAULT> }) {
           }}
         >
           <HeroSlider
-            slides={orderSlides(H.first).filter((slide) => H.source === "hero" || slide.id !== "fasad-do-posle")}
+            slides={orderSlides(H.first).filter((slide) => H.source === "hero" || !slide.homeOnly)}
             interval={5000}
           />
           {/* Floating badge top-right */}

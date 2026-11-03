@@ -7,7 +7,10 @@ export type Slide = {
   w: number;
   h: number;
   wSm: number;
-  kind?: "image" | "beforeAfter";
+  kind?: "image" | "beforeAfter" | "portrait" | "video";
+  src?: string;
+  durationMs?: number;
+  homeOnly?: boolean;
   beforeSrc?: string;
   afterSrc?: string;
   beforeAlt?: string;
@@ -29,6 +32,12 @@ const css = `
 .hs-ba-label.after { background: #6DBE45; }
 .hs-comparison-part:last-child .hs-ba-label { left: 18px; transform: none; }
 .hs-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.hs-media-frame { position: relative; width: 100%; height: 100%; overflow: hidden; background: #222; }
+.hs-media-bg { position: absolute; inset: -8%; width: 116% !important; height: 116% !important; object-fit: cover !important;
+  filter: blur(22px); opacity: .58; transform: scale(1.06); }
+.hs-media-shade { position: absolute; inset: 0; background: rgba(20,20,20,.24); }
+.hs-media-main { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain !important; display: block;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,.28)); }
 .hs-cap { position: absolute; top: 14px; left: 14px; z-index: 3; max-width: calc(100% - 150px); padding: 7px 14px; border-radius: 10px;
   background: rgba(20,20,20,.62); color: #fff; font: 700 14px/1.3 Montserrat, sans-serif; backdrop-filter: blur(4px); }
 .hs-btn { position: absolute; top: 50%; z-index: 3; width: 44px; height: 44px; margin-top: -22px; border: 0; border-radius: 50%; cursor: pointer;
@@ -74,6 +83,7 @@ export function HeroSlider({ slides, interval = 5000 }: { slides: Slide[]; inter
 
   const go = useCallback((i: number) => setActive(((i % n) + n) % n), [n]);
   const paused = hoverPause || userPause || hidden || reduced;
+  const activeDuration = slides[active]?.durationMs ?? interval;
 
   useEffect(() => {
     setReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -85,9 +95,9 @@ export function HeroSlider({ slides, interval = 5000 }: { slides: Slide[]; inter
   // Автопереключение: новый таймер на каждый кадр, при паузе таймера нет
   useEffect(() => {
     if (paused || n < 2) return;
-    const t = window.setTimeout(() => setActive((a) => (a + 1) % n), interval);
+    const t = window.setTimeout(() => setActive((a) => (a + 1) % n), activeDuration);
     return () => window.clearTimeout(t);
-  }, [active, paused, n, interval]);
+  }, [active, paused, n, activeDuration]);
 
   const near = (i: number) => i === active || i === (active + 1) % n || i === (active - 1 + n) % n;
 
@@ -141,6 +151,34 @@ export function HeroSlider({ slides, interval = 5000 }: { slides: Slide[]; inter
                   />
                   <span className="hs-ba-label after">После</span>
                 </div>
+              </div>
+            ) : s.kind === "portrait" ? (
+              <div className="hs-media-frame">
+                <img className="hs-media-bg" src={s.src} alt="" aria-hidden="true" decoding="async" />
+                <div className="hs-media-shade" aria-hidden="true" />
+                <img
+                  className="hs-media-main"
+                  src={s.src}
+                  width={s.w}
+                  height={s.h}
+                  alt={s.alt}
+                  decoding="async"
+                />
+              </div>
+            ) : s.kind === "video" ? (
+              <div className="hs-media-frame">
+                <video className="hs-media-bg" src={s.src} muted autoPlay loop playsInline preload="metadata" aria-hidden="true" />
+                <div className="hs-media-shade" aria-hidden="true" />
+                <video
+                  className="hs-media-main"
+                  src={s.src}
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={s.alt}
+                />
               </div>
             ) : (
               <img
