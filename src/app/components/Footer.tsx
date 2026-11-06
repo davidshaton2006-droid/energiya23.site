@@ -243,8 +243,10 @@ export function Footer() {
           <div style={{ color: "#666", fontSize: "14px" }}>
             г. Краснодар, ул. Ростовское шоссе 14/2 | +7 (960) 493-33-56 |{" "}
             <a href="/privacy/" style={{ color: "#999", textDecoration: "underline" }}>
-              Политика конфиденциальности
-            </a>
+              Политика обработки персональных данных
+            </a>{" | "}
+            <a href="/personal-data-consent/" style={{ color: "#999", textDecoration: "underline" }}>Согласие на обработку ПД</a>{" | "}
+            <button type="button" onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))} style={{ background:"none",border:0,padding:0,color:"#999",textDecoration:"underline",cursor:"pointer",font:"inherit" }}>Настройки cookie</button>
           </div>
         </div>
       </div>
