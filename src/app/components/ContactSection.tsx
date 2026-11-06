@@ -208,7 +208,10 @@ function LeadForm({ source }: { source: string }) {
           Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам: +7 (960) 493-33-56.
         </div>
       )}
-
+      <label style={{ display:"flex", gap:"10px", alignItems:"flex-start", fontSize:"14px", lineHeight:1.5, color:"#555" }}>
+        <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} required style={{ marginTop:"4px", accentColor:"#6DBE45" }} />
+        <span>Я даю <a href="/personal-data-consent/" target="_blank" rel="noopener noreferrer" style={{color:"#E87722"}}>согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="/privacy/" target="_blank" rel="noopener noreferrer" style={{color:"#E87722"}}>Политикой обработки персональных данных</a>.</span>
+      </label>
       <button
         type="submit"
         disabled={sending || !agreed}
