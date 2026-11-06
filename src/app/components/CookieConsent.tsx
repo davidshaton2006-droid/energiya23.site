@@ -56,6 +56,7 @@ export function CookieConsent() {
     setConsent(value);
     setOpen(false);
     if (value === "accepted") loadMetrika();
+    if (value === "rejected" && consent === "accepted") window.location.reload();
   };
 
   if (!open) return null;
