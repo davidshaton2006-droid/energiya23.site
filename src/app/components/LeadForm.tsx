@@ -45,6 +45,9 @@ const css = `
 .lf-err { color: #D93025; font-size: 13px; margin-top: 4px; }
 .lf-note { color: #666; font-size: 13px; line-height: 1.45; margin: 0; }
 .lf-note a { color: #E87722; }
+.lf-consent { display:flex; align-items:flex-start; gap:9px; color:#555; font-size:13px; line-height:1.5; cursor:pointer; }
+.lf-consent input { margin-top:4px; accent-color:#6DBE45; flex-shrink:0; }
+.lf-consent a { color:#E87722; }
 .lf-ok { background: #EEF8E8; border: 1.5px solid #6DBE45; border-radius: 14px; padding: 16px 18px; color: #222; font-size: 15px; font-weight: 700; line-height: 1.5; }
 .lf-alert { background: rgba(217,48,37,.08); border: 1.5px solid rgba(217,48,37,.3); color: #B3261E; padding: 10px 12px; border-radius: 10px; font-size: 13px; line-height: 1.45; }
 .lf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
@@ -52,6 +55,7 @@ const css = `
 
 /** Короткая форма: имя + телефон + кнопка. Используется в первом экране и в оффере. */
 export function LeadFormCompact({ source, buttonText = "Рассчитать", pulse = false, phoneOnly = false }: { source: string; buttonText?: string; pulse?: boolean; phoneOnly?: boolean }) {
+  const [agreed, setAgreed] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [website, setWebsite] = useState(""); // honeypot от ботов
@@ -60,6 +64,7 @@ export function LeadFormCompact({ source, buttonText = "Рассчитать", p
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (!agreed) return;
     const next: { name?: string; phone?: string } = {};
     if (!phoneOnly && !name.trim()) next.name = "Укажите имя";
     if (digitsCount(phone) < 10) next.phone = "Введите корректный номер телефона";
@@ -70,6 +75,7 @@ export function LeadFormCompact({ source, buttonText = "Рассчитать", p
     try {
       await sendLead({ name: phoneOnly ? "" : name, phone, website, source });
       setStatus("success");
+      setAgreed(false);
       setName("");
       setPhone("");
     } catch {
@@ -137,16 +143,11 @@ export function LeadFormCompact({ source, buttonText = "Рассчитать", p
           Не удалось отправить заявку. Попробуйте ещё раз или позвоните: <a href="tel:+79604933356" style={{ color: "#B3261E", fontWeight: 700 }}>+7 (960) 493-33-56</a>.
         </div>
       )}
-      <button type="submit" className={pulse ? "lf-btn pulse" : "lf-btn"} disabled={status === "sending"}>
+      <label className="lf-consent"><input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} required /><span>Я даю <a href="/personal-data-consent/" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</a> и ознакомлен(а) с <a href="/privacy/" target="_blank" rel="noopener noreferrer">Политикой обработки персональных данных</a>.</span></label>
+      <button type="submit" className={pulse ? "lf-btn pulse" : "lf-btn"} disabled={status === "sending" || !agreed}>
         {status === "sending" ? "Отправляем…" : buttonText}
       </button>
-      <p className="lf-note">
-        Нажимая кнопку, вы соглашаетесь с{" "}
-        <a href="/privacy/" target="_blank" rel="noopener">
-          Политикой конфиденциальности
-        </a>
-        .
-      </p>
+
     </form>
   );
 }
