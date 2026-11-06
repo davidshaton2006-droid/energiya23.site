@@ -18,6 +18,7 @@ import { VacanciesSection } from "./components/VacanciesSection";
 import { FaqSection } from "./components/FaqSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
+import { CookieConsent } from "./components/CookieConsent";
 
 type Block = { id: string; c?: any };
 
@@ -115,6 +116,7 @@ export default function App() {
       <Header items={navItems} />
       <main>{blocks.map((b) => renderBlock(b, slug))}</main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
