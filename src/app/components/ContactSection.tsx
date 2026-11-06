@@ -45,6 +45,7 @@ const labelStyle = {
 };
 
 function LeadForm({ source }: { source: string }) {
+  const [agreed, setAgreed] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
@@ -54,6 +55,7 @@ function LeadForm({ source }: { source: string }) {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    if (!agreed) return;
     const next: { name?: string; phone?: string } = {};
     if (!name.trim()) next.name = "Укажите имя";
     if (phone.replace(/\D/g, "").length < 10) next.phone = "Введите корректный номер телефона";
@@ -69,6 +71,7 @@ function LeadForm({ source }: { source: string }) {
       });
       if (!response.ok) throw new Error("Ошибка отправки");
       setStatus("success");
+      setAgreed(false);
       // Цель Яндекс Метрики: заявка отправлена
       (window as any).ym?.(113330393, "reachGoal", "lead");
       setName("");
@@ -208,7 +211,7 @@ function LeadForm({ source }: { source: string }) {
 
       <button
         type="submit"
-        disabled={sending}
+        disabled={sending || !agreed}
         style={{
           backgroundColor: "#E87722",
           color: "#fff",
@@ -226,13 +229,7 @@ function LeadForm({ source }: { source: string }) {
         {sending ? "Отправляем…" : "Отправить заявку"}
       </button>
 
-      <p style={{ color: "#666", fontSize: "16px", lineHeight: 1.5, margin: 0, textAlign: "center" }}>
-        Отправляя форму, вы соглашаетесь с{" "}
-        <a href="/privacy/" target="_blank" rel="noopener" style={{ color: "#E87722" }}>
-          Политикой конфиденциальности
-        </a>
-        .
-      </p>
+
     </form>
   );
 }
