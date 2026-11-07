@@ -534,10 +534,13 @@ export function ContactSection({ source = "contacts", showPartnership = true, c 
                   Реквизиты компании
                 </div>
                 <div style={{ color: "#3F3F3F", fontSize: "17px", lineHeight: 1.8 }}>
-                  <div style={{ fontWeight: 700, color: "#222" }}>ООО ЭНЕРГИЯ</div>
-                  <div>ИНН: 2348036088 | ОГРН: 1142348000332</div>
+                  <div style={{ fontWeight: 700, color: "#222" }}>ООО «ЭНЕРГИЯ»</div>
+                  <div>ИНН: 2312330706 | ОГРН: 1242300058329</div>
                 </div>
-                <button
+                <a
+                  href="/rekvizity-ooo-energiya.pdf"
+                  download="Реквизиты-ООО-ЭНЕРГИЯ.pdf"
+                  aria-label="Скачать реквизиты ООО ЭНЕРГИЯ в формате PDF"
                   style={{
                     marginTop: "12px",
                     backgroundColor: "transparent",
@@ -550,12 +553,14 @@ export function ContactSection({ source = "contacts", showPartnership = true, c 
                     cursor: "pointer",
                     fontFamily: "Montserrat, sans-serif",
                     transition: "background 0.2s",
+                    display: "inline-block",
+                    textDecoration: "none",
                   }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(232,119,34,0.07)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = "transparent"; }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(232,119,34,0.07)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; }}
                 >
                   Скачать реквизиты
-                </button>
+                </a>
               </div>
             </div>
 
